@@ -31,11 +31,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _counter = 100;
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      _counter--;
     });
   }
 
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('our app'),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
