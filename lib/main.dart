@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 
       title: 'Flutter Demo pageeeeeeee',
-      title: 'Flutter Demo app is here',
 
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -21,9 +20,6 @@ class MyApp extends StatelessWidget {
       ),
 
       home: const MyHomePage(title: 'Flutter Demo Home Pageeee'),
-=======
-
-      home: const MyHomePage(title: 'Flutter Demo Home_Page_'),
 
     );
   }
@@ -69,10 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-
-        title: Text('Amader'),
-
-        title: Text('our app'),
 
       ),
       body: Center(
