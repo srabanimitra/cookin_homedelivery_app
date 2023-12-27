@@ -75,6 +75,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   lints:
     dependency: transitive
     description:
@@ -107,6 +112,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  otp_pin_field:
+    dependency: "direct main"
+    description:
+      name: otp_pin_field
+      sha256: d15b348ebc21c17fccc926a79a21447dd653a29c7a514b6a4015c1ff6ddc71ec
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.2"
   path:
     dependency: transitive
     description:
@@ -115,6 +128,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      sha256: f4f88d4a900933e7267e2b353594774fc0d07fb072b47eedcd5b54e1ea3269f8
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.7"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -186,3 +207,4 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.1 <4.0.0"
+  flutter: ">=1.17.0"
