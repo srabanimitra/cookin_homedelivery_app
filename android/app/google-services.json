@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195404149002",
+    "project_id": "flutter-firebase-8110c",
+    "storage_bucket": "flutter-firebase-8110c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195404149002:android:5727e854c2b9bb70158af3",
+        "android_client_info": {
+          "package_name": "com.example.cookinapp_01"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXMRB0uZUmfnI-Q7UzHG-ImLNViqf1YMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
