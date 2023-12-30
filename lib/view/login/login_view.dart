@@ -1,6 +1,7 @@
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:cookinapp_01/common_widget/round_icon_buton.dart';
+import 'package:cookinapp_01/view/login/reset_password_view.dart';
 import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
