@@ -1,9 +1,7 @@
-//import 'package:cookin/common/color_extention.dart/color_extension.dart';
-//import 'package:cookin/common_widget/round_button.dart';
-import 'package:cookinapp_01/common/color_extension.dart';
-import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/color_extension.dart';
+import '../../common_widget/round_button.dart';
 import '../../common_widget/round_textfield.dart';
 
 class NewPasswordView extends StatefulWidget {

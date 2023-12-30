@@ -1,6 +1,9 @@
-import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
+
 import '../../common/color_extension.dart';
+import '../../common_widget/round_button.dart';
+import 'login_view.dart';
+import 'sign_up_view.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -48,7 +51,14 @@ class _WelcomeViewState extends State<WelcomeView> {
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
               title: "Login",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginView(),
+                  ),
+                );
+              },
             ),
           ),
           SizedBox(
@@ -59,7 +69,14 @@ class _WelcomeViewState extends State<WelcomeView> {
             child: RoundButton(
               title: "Create an Account",
               type: RoundButtonType.textPrimary,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUpView(),
+                  ),
+                );
+              },
             ),
           ),
         ],

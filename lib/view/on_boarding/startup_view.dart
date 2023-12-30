@@ -1,12 +1,6 @@
-//import 'package:cookin/view/login/welcome_view.dart';
-//import 'package:cookin/view/login/welcome_view.dart';
-//import 'package:cookin/view/login/welcome_view.dart/welcome_view.dart';
-import 'package:cookinapp_01/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
 
-//import '../login/welcome_view.dart';
-//
-//import 'package:food_delivery/view/main_tabview/main_tabview.dart';
+import '../login/welcome_view.dart';
 
 class StartupView extends StatefulWidget {
   const StartupView({super.key});
