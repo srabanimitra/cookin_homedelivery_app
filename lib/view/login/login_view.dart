@@ -1,3 +1,4 @@
+import 'package:cookinapp_01/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
@@ -55,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                 keyboardtype: TextInputType.emailAddress,
               ),
               const SizedBox(
-                height: 20,
+                height: 25,
               ),
               RoundTextfield(
                 hinText: " Password",
@@ -63,9 +64,16 @@ class _LoginViewState extends State<LoginView> {
                 obscureText: true,
               ),
               const SizedBox(
-                height: 20,
+                height: 25,
               ),
-              RoundButton(title: "Login", onPressed: () {}),
+              RoundButton(title: "Login", onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OnBoardingView(),
+                  ),
+                );
+              }),
               const SizedBox(
                 height: 4,
               ),
@@ -104,7 +112,7 @@ class _LoginViewState extends State<LoginView> {
               RoundIconButton(
                 icon: "assets/img/facebook_logo.png",
                 title: "Login With Facebook",
-                color: const Color.fromARGB(255, 69, 61, 224),
+                color: const Color(0xff367FC0),
                 onPressed: () {},
               ),
               const SizedBox(
