@@ -1,4 +1,3 @@
-
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:flutter/material.dart';
 import '../../common_widget/tab_button.dart';
@@ -24,7 +23,7 @@ class _MainTabViewState extends State<MainTabView> {
       body: PageStorage(bucket: storageBucket, child: selectPageView),
       backgroundColor: const Color(0xfff5f5f5),
       floatingActionButtonLocation:
-      FloatingActionButtonLocation.miniCenterDocked,
+          FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: SizedBox(
         width: 60,
         height: 60,
@@ -64,7 +63,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 0) {
                       selctTab = 0;
-                      selectPageView =  Container();
+                      selectPageView = Container();
                     }
                     if (mounted) {
                       setState(() {});
@@ -77,24 +76,24 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 1) {
                       selctTab = 1;
-                      selectPageView =  Container();
+                      selectPageView = Container();
                     }
                     if (mounted) {
                       setState(() {});
                     }
                   },
                   isSelected: selctTab == 1),
-
-
-              const  SizedBox(width: 40, height: 40, ),
-
+              const SizedBox(
+                width: 40,
+                height: 40,
+              ),
               TabButton(
                   title: "Profile",
                   icon: "assets/img/tab_profile.png",
                   onTap: () {
                     if (selctTab != 3) {
                       selctTab = 3;
-                      selectPageView =  Container();
+                      selectPageView = Container();
                     }
                     if (mounted) {
                       setState(() {});
@@ -107,7 +106,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 4) {
                       selctTab = 4;
-                      selectPageView =Container();
+                      selectPageView = Container();
                     }
                     if (mounted) {
                       setState(() {});
