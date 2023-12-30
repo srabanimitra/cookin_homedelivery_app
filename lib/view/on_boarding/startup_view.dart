@@ -4,18 +4,15 @@ import '../login/welcome_view.dart';
 
 class StartupView extends StatefulWidget {
   const StartupView({super.key});
-
   @override
   State<StartupView> createState() => _StartupViewState();
 }
-
 class _StartupViewState extends State<StartupView> {
   @override
   void initState() {
     super.initState();
     goWelcomePage();
   }
-
   void goWelcomePage() async {
     await Future.delayed(const Duration(seconds: 8));
     // ignore: use_build_context_synchronously
@@ -45,8 +42,8 @@ class _StartupViewState extends State<StartupView> {
           ),
           Image.asset(
             "assets/img/app_logo.png",
-            width: media.width * 0.55,
-            height: media.height * 0.55,
+            width: media.width*0.55,
+            height: media.height*0.55,
             fit: BoxFit.contain,
           ),
         ],
