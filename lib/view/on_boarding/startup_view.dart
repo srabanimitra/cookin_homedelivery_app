@@ -1,4 +1,6 @@
-
+//import 'package:cookin/view/login/welcome_view.dart';
+//import 'package:cookin/view/login/welcome_view.dart';
+//import 'package:cookin/view/login/welcome_view.dart/welcome_view.dart';
 import 'package:cookinapp_01/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
 
@@ -6,15 +8,14 @@ import 'package:flutter/material.dart';
 //
 //import 'package:food_delivery/view/main_tabview/main_tabview.dart';
 
-class StartupView extends StatefulWidget{
+class StartupView extends StatefulWidget {
   const StartupView({super.key});
 
   @override
   State<StartupView> createState() => _StartupViewState();
-
 }
 
-class _StartupViewState extends State<StartupView>{
+class _StartupViewState extends State<StartupView> {
   @override
   void initState() {
     super.initState();
@@ -22,13 +23,16 @@ class _StartupViewState extends State<StartupView>{
   }
 
   void goWelcomePage() async {
-
-    await Future.delayed( const Duration(seconds: 8) );
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const WelcomeView()));
+    await Future.delayed(const Duration(seconds: 8));
+    // ignore: use_build_context_synchronously
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const WelcomeView()));
     welcomePage();
   }
-  void welcomePage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const WelcomeView()));
+
+  void welcomePage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const WelcomeView()));
   }
 
   @override
@@ -45,7 +49,6 @@ class _StartupViewState extends State<StartupView>{
             height: media.height,
             fit: BoxFit.cover,
           ),
-
           Image.asset(
             "assets/img/app_logo.png",
             width: media.width * 0.55,
@@ -53,7 +56,6 @@ class _StartupViewState extends State<StartupView>{
             fit: BoxFit.contain,
           ),
         ],
-
       ),
     );
   }
