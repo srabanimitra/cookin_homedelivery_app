@@ -1,11 +1,11 @@
-import 'package:cookinapp_01/common/color_extension.dart';
-import 'package:cookinapp_01/common_widget/round_button.dart';
-import 'package:cookinapp_01/common_widget/round_icon_buton.dart';
-import 'package:cookinapp_01/view/login/reset_password_view.dart';
-import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/color_extension.dart';
+import '../../common_widget/round_button.dart';
+import '../../common_widget/round_icon_buton.dart';
 import '../../common_widget/round_textfield.dart';
+import 'reset_password_view.dart';
+import 'sign_up_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
