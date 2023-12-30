@@ -142,6 +142,7 @@ class _OtpViewState extends State<OtpView> {
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                   ),
+
                   Text(
                     "Click Here",
                     style: TextStyle(
