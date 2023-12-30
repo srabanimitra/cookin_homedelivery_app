@@ -11,12 +11,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+
+      title: 'Flutter Demo pageeeeeeee',
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+      home: const MyHomePage(title: 'Flutter Demo Home Pageeee'),
+
     );
   }
 }
@@ -24,11 +28,17 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
+
+
   final String title;
+
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 100;
@@ -55,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text('our app'),
+
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -88,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        tooltip: 'prova',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
