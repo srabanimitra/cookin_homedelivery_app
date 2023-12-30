@@ -1,9 +1,9 @@
-import 'package:cookinapp_01/common/color_extension.dart';
-import 'package:cookinapp_01/common_widget/round_button.dart';
-import 'package:cookinapp_01/view/login/new_password_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/color_extension.dart';
+import '../../common_widget/round_button.dart';
 import '../../common_widget/round_textfield.dart';
+import 'new_password_view.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key});

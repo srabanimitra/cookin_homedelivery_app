@@ -1,12 +1,8 @@
-//import 'package:cookin/common/color_extention.dart/color_extension.dart';
-//import 'package:cookin/common_widget/round_button.dart';
-import 'package:cookinapp_01/common/color_extension.dart';
-import 'package:cookinapp_01/common_widget/round_button.dart';
-//import 'package:cookin/view/login/new_password_view.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 
-//import '../../common_widget/round_textfield.dart';
+import '../../common/color_extension.dart';
+import '../../common_widget/round_button.dart';
 
 class OtpView extends StatefulWidget {
   const OtpView({super.key});
