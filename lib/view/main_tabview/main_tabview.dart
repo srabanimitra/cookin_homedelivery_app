@@ -2,8 +2,6 @@ import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:flutter/material.dart';
 import '../../common_widget/tab_button.dart';
 import '../home/home_view.dart';
-//import '../../common_widget/tab_button.dart';
-//import '../home/home_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
