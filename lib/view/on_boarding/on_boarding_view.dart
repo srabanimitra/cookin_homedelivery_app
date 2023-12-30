@@ -104,14 +104,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   ),
                 ],
               );
-
-              // SizedBox(
-              //   height: media.width * 0.05,
-              // ),
-
-              // SizedBox(
-              //   height: media.width * 0.3,
-              // ),
             }),
           ),
           Column(

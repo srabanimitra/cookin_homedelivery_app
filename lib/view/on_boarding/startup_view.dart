@@ -1,3 +1,6 @@
+//import 'package:cookin/view/login/welcome_view.dart';
+//import 'package:cookin/view/login/welcome_view.dart';
+//import 'package:cookin/view/login/welcome_view.dart/welcome_view.dart';
 import 'package:cookinapp_01/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +24,7 @@ class _StartupViewState extends State<StartupView> {
 
   void goWelcomePage() async {
     await Future.delayed(const Duration(seconds: 8));
+    // ignore: use_build_context_synchronously
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const WelcomeView()));
     welcomePage();
