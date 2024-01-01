@@ -1,3 +1,5 @@
+import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/services.dart';
 
@@ -15,13 +17,25 @@ class SignUpView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<SignUpView> {
-  TextEditingController txtName = TextEditingController();
+  final FirebaseAuthService _auth = FirebaseAuthService();
+  TextEditingController _usernamecontroller = TextEditingController();
+  TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _passwordcontroller = TextEditingController();
+  // TextEditingController txtName = TextEditingController();
   TextEditingController txtMobile = TextEditingController();
   TextEditingController txtAddress = TextEditingController();
 
-  TextEditingController txtEmail = TextEditingController();
-  TextEditingController txtPassword = TextEditingController();
+  // TextEditingController txtEmail = TextEditingController();
+  //TextEditingController txtPassword = TextEditingController();
   TextEditingController txtConfirmPassword = TextEditingController();
+  @override
+  void dispose() {
+    super.dispose();
+    _usernamecontroller.dispose();
+    _emailcontroller.dispose();
+    _passwordcontroller.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     //  var media = MediaQuery.of(context).size;
@@ -55,8 +69,8 @@ class _LoginViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
+                controller: _usernamecontroller,
                 hinText: "Name",
-                controller: txtName,
               ),
               const SizedBox(
                 height: 25,
@@ -77,16 +91,16 @@ class _LoginViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
+                controller: _emailcontroller,
                 hinText: "Email",
-                controller: txtEmail,
                 keyboardtype: TextInputType.emailAddress,
               ),
               const SizedBox(
                 height: 20,
               ),
               RoundTextfield(
+                controller: _passwordcontroller,
                 hinText: " Password",
-                controller: txtPassword,
                 obscureText: true,
               ),
               const SizedBox(
@@ -145,5 +159,18 @@ class _LoginViewState extends State<SignUpView> {
         ),
       ),
     );
+  }
+
+  void _signup() async {
+    String username = _usernamecontroller.text;
+    String email = _emailcontroller.text;
+    String password = _passwordcontroller.text;
+    User? user = await _auth.signupWithEmailAndPassword(email, password);
+    if (user != null) {
+      print("user is successfully creater");
+      Navigator.pushNamed(context, "\home");
+    } else {
+      print("some error occured");
+    }
   }
 }

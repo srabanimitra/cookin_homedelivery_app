@@ -1,24 +1,24 @@
-//import 'package:cookin/view/on_boarding/startup_view.dart';
-//import 'package:cookin/view/login/welcome_view.dart';
-//import 'package:cookin/view/on_boarding/startup_view.dart/startup_view.dart';
 import 'package:cookinapp_01/view/on_boarding/startup_view.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
-
-
-
 class MyApp extends StatelessWidget {
-
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'prova',
+      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "metropolis",
