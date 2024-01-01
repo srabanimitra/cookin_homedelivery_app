@@ -18,9 +18,9 @@ class SignUpView extends StatefulWidget {
 
 class _LoginViewState extends State<SignUpView> {
   final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController _usernamecontroller = TextEditingController();
-  TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _passwordcontroller = TextEditingController();
+  final TextEditingController _usernamecontroller = TextEditingController();
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController();
   // TextEditingController txtName = TextEditingController();
   TextEditingController txtMobile = TextEditingController();
   TextEditingController txtAddress = TextEditingController();
@@ -168,7 +168,7 @@ class _LoginViewState extends State<SignUpView> {
     User? user = await _auth.signupWithEmailAndPassword(email, password);
     if (user != null) {
       print("user is successfully creater");
-      Navigator.pushNamed(context, "\home");
+      Navigator.pushNamed(context, "home");
     } else {
       print("some error occured");
     }
