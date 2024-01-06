@@ -39,7 +39,7 @@ class _SignUpViewState extends State<SignUpView> {
     //  var media = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text("Sign In"),
+          title: Text("Sign Up"),
         ),
         body: Center(
           child: Padding(
