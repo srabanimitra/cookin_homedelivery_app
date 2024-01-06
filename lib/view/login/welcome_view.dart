@@ -27,8 +27,8 @@ class _WelcomeViewState extends State<WelcomeView> {
                   width: media.width),
               Image.asset(
                 "assets/img/app_logo.png",
-                width: media.width * 0.25,
-                height: media.width * 0.25,
+                width: media.width * 0.55,
+                height: media.width * 0.55,
                 fit: BoxFit.contain,
               ),
             ],
@@ -79,7 +79,7 @@ class _WelcomeViewState extends State<WelcomeView> {
               },
             ),
           ),
-          SizedBox(
+          /* SizedBox(
             height: media.width * 0.1,
           ),
           Padding(
@@ -89,7 +89,7 @@ class _WelcomeViewState extends State<WelcomeView> {
               type: RoundButtonType.textPrimary,
               onPressed: () {},
             ),
-          ),
+          ),*/
         ],
       ),
     );
