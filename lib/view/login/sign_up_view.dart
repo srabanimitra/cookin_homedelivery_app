@@ -1,14 +1,8 @@
-//import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../common_widget/round_button.dart';
 import '../on_boarding/on_boarding_view.dart';
-//import '../../common/color_extension.dart';
-//import '../../common_widget/round_button.dart';
-//import '../../common_widget/round_textfield.dart';
-//import 'login_view.dart';
-//import 'otp_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -20,9 +14,10 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-  TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _passwordcontroller = TextEditingController();
-  TextEditingController _confirmpasswordcontroller = TextEditingController();
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController();
+  final TextEditingController _confirmpasswordcontroller =
+      TextEditingController();
   String _email = "";
   String _password = "";
   void _handleSignUp() async {
@@ -45,13 +40,16 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     //  var media = MediaQuery.of(context).size;
+
     return Scaffold(
         appBar: AppBar(
-          title: Text("Sign Up"),
+          backgroundColor: Color.fromARGB(223, 215, 71, 9),
+          title: const Text("Sign Up"),
         ),
+        backgroundColor: Color.fromARGB(255, 235, 201, 82),
         body: Center(
           child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Form(
                 key: _formkey,
                 child: Column(
@@ -127,6 +125,7 @@ class _SignUpViewState extends State<SignUpView> {
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           _handleSignUp();
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -135,7 +134,7 @@ class _SignUpViewState extends State<SignUpView> {
                           );
                         }
                       },
-                      child: Text("Sign Up"),
+                      child: const Text("Sign Up"),
                     ),
                   ],
                 ),

@@ -1,6 +1,8 @@
 //import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../on_boarding/on_boarding_view.dart';
 //import '../../common/color_extension.dart';
 //import '../../common_widget/round_button.dart';
 //import '../../common_widget/round_textfield.dart';
@@ -97,6 +99,12 @@ class _LoginViewState extends State<LoginView> {
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           _handleLogin();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const OnBoardingView(),
+                            ),
+                          );
                         }
                       },
                       child: Text("Log In"),

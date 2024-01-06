@@ -27,8 +27,8 @@ class _WelcomeViewState extends State<WelcomeView> {
                   width: media.width),
               Image.asset(
                 "assets/img/app_logo.png",
-                width: media.width * 0.55,
-                height: media.width * 0.55,
+                width: media.width * 0.25,
+                height: media.width * 0.25,
                 fit: BoxFit.contain,
               ),
             ],
@@ -77,6 +77,17 @@ class _WelcomeViewState extends State<WelcomeView> {
                   ),
                 );
               },
+            ),
+          ),
+          SizedBox(
+            height: media.width * 0.1,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: RoundButton(
+              title: "SignUp As A Chef",
+              type: RoundButtonType.textPrimary,
+              onPressed: () {},
             ),
           ),
         ],
