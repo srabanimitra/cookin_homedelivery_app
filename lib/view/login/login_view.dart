@@ -47,6 +47,7 @@ class _LoginViewState extends State<LoginView> {
               child: Form(
                 key: _formkey,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
                       controller: _emailcontroller,
@@ -67,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
                         });
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(

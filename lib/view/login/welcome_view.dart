@@ -67,7 +67,7 @@ class _WelcomeViewState extends State<WelcomeView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
-              title: "Create an Account",
+              title: "SignUp",
               type: RoundButtonType.textPrimary,
               onPressed: () {
                 Navigator.push(
