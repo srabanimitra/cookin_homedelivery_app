@@ -9,8 +9,7 @@ class RoundTextfield extends StatelessWidget {
   final TextInputType? keyboardtype;
   final bool obscureText;
   final Color? bgColor;
-  final Widget?left;
-
+  final Widget? left;
   const RoundTextfield(
       {super.key,
         required this.hinText,
@@ -18,7 +17,7 @@ class RoundTextfield extends StatelessWidget {
         this.keyboardtype,
         this.bgColor,
         this.left,
-        this.obscureText = false});
+        this.obscureText=false});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +30,6 @@ class RoundTextfield extends StatelessWidget {
               child: left!,
             ),
             Expanded(
-
               child: TextField(
                 autocorrect: false,
                 controller: controller,
@@ -41,7 +39,6 @@ class RoundTextfield extends StatelessWidget {
                     contentPadding: const EdgeInsets.symmetric(horizontal: 20),
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
-
                     hintText: hinText,
                     hintStyle: TextStyle(
                       color: TColor.placeholder,
