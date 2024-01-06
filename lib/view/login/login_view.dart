@@ -66,14 +66,16 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 25,
               ),
-              RoundButton(title: "Login", onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const OnBoardingView(),
-                  ),
-                );
-              }),
+              RoundButton(
+                  title: "Login",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OnBoardingView(),
+                      ),
+                    );
+                  }),
               const SizedBox(
                 height: 4,
               ),
@@ -120,7 +122,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               RoundIconButton(
                 icon: "assets/img/google_logo.png",
-                title: "Login With Google",
+                title: "Login with Google",
                 color: const Color(0xffDD4B39),
                 onPressed: () {},
               ),

@@ -1,42 +1,127 @@
-import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+//import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
-
-import '../../common/color_extension.dart';
-import '../../common_widget/round_button.dart';
-import '../../common_widget/round_textfield.dart';
-import 'login_view.dart';
-import 'otp_view.dart';
+//import '../../common/color_extension.dart';
+//import '../../common_widget/round_button.dart';
+//import '../../common_widget/round_textfield.dart';
+//import 'login_view.dart';
+//import 'otp_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
 
   @override
-  State<SignUpView> createState() => _LoginViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LoginViewState extends State<SignUpView> {
-  final FirebaseAuthService _auth = FirebaseAuthService();
-  final TextEditingController _usernamecontroller = TextEditingController();
-  final TextEditingController _emailcontroller = TextEditingController();
-  final TextEditingController _passwordcontroller = TextEditingController();
-  // TextEditingController txtName = TextEditingController();
-  TextEditingController txtMobile = TextEditingController();
-  TextEditingController txtAddress = TextEditingController();
+class _SignUpViewState extends State<SignUpView> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _passwordcontroller = TextEditingController();
+  String _email = "";
+  String _password = "";
+  void _handleSignUp() async {
+    try {
+      UserCredential userCredentia = await _auth.createUserWithEmailAndPassword(
+        email: _email,
+        password: _password,
+      );
 
-  // TextEditingController txtEmail = TextEditingController();
-  //TextEditingController txtPassword = TextEditingController();
-  TextEditingController txtConfirmPassword = TextEditingController();
-  @override
-  void dispose() {
-    super.dispose();
-    _usernamecontroller.dispose();
-    _emailcontroller.dispose();
-    _passwordcontroller.dispose();
+      print("User Registered : ${userCredentia.user!.email}");
+    } catch (e) {
+      print("Error During Registration : $e");
+    }
   }
 
   @override
+  Widget build(BuildContext context) {
+    //  var media = MediaQuery.of(context).size;
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Sign In"),
+        ),
+        body: Center(
+          child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Form(
+                key: _formkey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: _emailcontroller,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Email",
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please Enter Your Email";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          _email = value;
+                        });
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      controller: _passwordcontroller,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Password",
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please Enter Your password";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          _password = value;
+                        });
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_formkey.currentState!.validate()) {
+                          _handleSignUp();
+                        }
+                      },
+                      child: Text("Sign Up"),
+                    ),
+                  ],
+                ),
+              )),
+        ));
+  }
+}
+ /*
+class _SignUpViewState extends State<SignUpView> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  //final TextEditingController _namecontroller = TextEditingController();
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController();
+  // TextEditingController txtName = TextEditingController();
+  //TextEditingController txtMobile = TextEditingController();
+  //TextEditingController txtAddress = TextEditingController();
+
+  // TextEditingController txtEmail = TextEditingController();
+  //TextEditingController txtPassword = TextEditingController();
+  //TextEditingController txtConfirmPassword = TextEditingController();
+  
+ @override
   Widget build(BuildContext context) {
     //  var media = MediaQuery.of(context).size;
     return Scaffold(
@@ -69,7 +154,7 @@ class _LoginViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                controller: _usernamecontroller,
+                controller: _namecontroller,
                 hinText: "Name",
               ),
               const SizedBox(
@@ -162,7 +247,7 @@ class _LoginViewState extends State<SignUpView> {
   }
 
   void _signup() async {
-    String username = _usernamecontroller.text;
+    String name = _namecontroller.text;
     String email = _emailcontroller.text;
     String password = _passwordcontroller.text;
     User? user = await _auth.signupWithEmailAndPassword(email, password);
@@ -174,3 +259,4 @@ class _LoginViewState extends State<SignUpView> {
     }
   }
 }
+*/
