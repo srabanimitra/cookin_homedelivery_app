@@ -20,20 +20,38 @@ class _SignUpViewState extends State<SignUpView> {
       TextEditingController();
   String _email = "";
   String _password = "";
+  void showErrorMessage(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.deepPurple,
+          title: Center(
+            child: Text(
+              message,
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   void _handleSignUp() async {
     try {
-      if (_passwordcontroller == _confirmpasswordcontroller) {
-        UserCredential userCredentia =
-            await _auth.createUserWithEmailAndPassword(
-          email: _email,
-          password: _password,
+      if (_passwordcontroller.text == _confirmpasswordcontroller.text) {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailcontroller.text,
+          password: _passwordcontroller.text,
         );
+      } else {
+        showErrorMessage("Passwords dont match");
       }
-
-      var userCredentia;
-      print("User Registered : ${userCredentia.user!.email}");
-    } catch (e) {
-      print("Error During Registration : $e");
+      //pop navigator
+    } on FirebaseAuthException catch (e) {
+      //pop navigator
+      Navigator.pop(context);
+      showErrorMessage(e.code);
     }
   }
 
@@ -109,7 +127,11 @@ class _SignUpViewState extends State<SignUpView> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Please Enter Your password Again";
+                        } else if (_passwordcontroller.text !=
+                            _confirmpasswordcontroller.text) {
+                          return "Please Enter Your password Correctly";
                         }
+
                         return null;
                       },
                       onChanged: (value) {
@@ -125,7 +147,6 @@ class _SignUpViewState extends State<SignUpView> {
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           _handleSignUp();
-
                           Navigator.push(
                             context,
                             MaterialPageRoute(
