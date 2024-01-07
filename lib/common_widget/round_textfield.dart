@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 class RoundTextfield extends StatelessWidget {
   final TextEditingController? controller;
-  final String hinText;
+  final String hintText;
   final TextInputType? keyboardtype;
   final bool obscureText;
   final Color? bgColor;
   final Widget? left;
   const RoundTextfield(
       {super.key,
-        required this.hinText,
+        required this.hintText,
         this.controller,
         this.keyboardtype,
         this.bgColor,
@@ -39,7 +39,7 @@ class RoundTextfield extends StatelessWidget {
                     contentPadding: const EdgeInsets.symmetric(horizontal: 20),
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
-                    hintText: hinText,
+                    hintText: hintText,
                     hintStyle: TextStyle(
                       color: TColor.placeholder,
                       fontSize: 14,

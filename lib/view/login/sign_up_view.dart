@@ -70,13 +70,13 @@ class _LoginViewState extends State<SignUpView> {
               ),
               RoundTextfield(
                 controller: _usernamecontroller,
-                hinText: "Name",
+                hintText: "Name",
               ),
               const SizedBox(
                 height: 25,
               ),
               RoundTextfield(
-                hinText: "Phone No",
+                hintText: "Phone No",
                 controller: txtMobile,
                 keyboardtype: TextInputType.phone,
               ),
@@ -84,7 +84,7 @@ class _LoginViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hinText: "Address",
+                hintText: "Address",
                 controller: txtAddress,
               ),
               const SizedBox(
@@ -92,7 +92,7 @@ class _LoginViewState extends State<SignUpView> {
               ),
               RoundTextfield(
                 controller: _emailcontroller,
-                hinText: "Email",
+                hintText: "Email",
                 keyboardtype: TextInputType.emailAddress,
               ),
               const SizedBox(
@@ -100,14 +100,14 @@ class _LoginViewState extends State<SignUpView> {
               ),
               RoundTextfield(
                 controller: _passwordcontroller,
-                hinText: " Password",
+                hintText: " Password",
                 obscureText: true,
               ),
               const SizedBox(
                 height: 25,
               ),
               RoundTextfield(
-                hinText: "Confirm Password",
+                hintText: "Confirm Password",
                 controller: txtConfirmPassword,
                 obscureText: true,
               ),

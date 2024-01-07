@@ -51,7 +51,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 25,
               ),
               RoundTextfield(
-                hinText: "Your Email",
+                hintText: "Your Email",
                 controller: txtEmail,
                 keyboardtype: TextInputType.emailAddress,
               ),
@@ -59,7 +59,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 25,
               ),
               RoundTextfield(
-                hinText: " Password",
+                hintText: " Password",
                 controller: txtPassword,
                 obscureText: true,
               ),

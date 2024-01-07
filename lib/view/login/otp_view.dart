@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
-
 import '../../common_widget/round_button.dart';
-
-
-
 class OtpView extends StatefulWidget {
   const OtpView({Key? key}) : super(key: key);
-
   @override
   State<OtpView> createState() => _OtpViewState();
 }
-
 class _OtpViewState extends State<OtpView> {
   final _otpPinFieldController = GlobalKey<OtpPinFieldState>();
-  bool isOtpConfirmed = false;
-
+  bool isOtpConfirmed=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
