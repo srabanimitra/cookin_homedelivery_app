@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
@@ -13,8 +14,8 @@ class ResetPasswordView extends StatefulWidget {
 }
 
 class _ResetPasswordViewState extends State<ResetPasswordView> {
-  TextEditingController txtEmail = TextEditingController();
-  TextEditingController txtPassword = TextEditingController();
+  final _emailcontroller = TextEditingController();
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +51,8 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 60,
               ),
               RoundTextfield(
-                hinText: "Your Email",
-                controller: txtEmail,
+                hintText: "Your Email",
+                controller: _emailcontroller,
                 keyboardtype: TextInputType.emailAddress,
               ),
               const SizedBox(
@@ -60,12 +61,21 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               RoundButton(
                   title: "Send",
                   onPressed: () {
-                    Navigator.push(
+                    auth
+                        .sendPasswordResetEmail(
+                            email: _emailcontroller.text.toString())
+                        .then((value) {
+                      print(
+                          'We Have Sent You Email to Recover Password,Please Check Email');
+                    }).onError((error, stackTrace) {
+                      print("Enter Your Email Correctly");
+                    });
+                    /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const NewPasswordView(),
                       ),
-                    );
+                    );*/
                   }),
             ],
           ),
