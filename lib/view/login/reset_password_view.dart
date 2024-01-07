@@ -70,12 +70,12 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                     }).onError((error, stackTrace) {
                       print("Enter Your Email Correctly");
                     });
-                    Navigator.push(
+                    /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const NewPasswordView(),
                       ),
-                    );
+                    );*/
                   }),
             ],
           ),
