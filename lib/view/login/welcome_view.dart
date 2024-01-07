@@ -64,7 +64,10 @@ class _WelcomeViewState extends State<WelcomeView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
-              title:"Create an Account",
+
+              title: "SignUp",
+
+
               type: RoundButtonType.textPrimary,
               onPressed: () {
                 Navigator.push(
@@ -76,6 +79,17 @@ class _WelcomeViewState extends State<WelcomeView> {
               },
             ),
           ),
+          /* SizedBox(
+            height: media.width * 0.1,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: RoundButton(
+              title: "SignUp As A Chef",
+              type: RoundButtonType.textPrimary,
+              onPressed: () {},
+            ),
+          ),*/
         ],
       ),
     );
