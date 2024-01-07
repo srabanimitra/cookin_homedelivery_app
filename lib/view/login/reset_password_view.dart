@@ -1,9 +1,10 @@
-import 'package:cookinapp_01/common/color_extension.dart';
-import 'package:cookinapp_01/common_widget/round_button.dart';
-import 'package:cookinapp_01/view/login/new_password_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/color_extension.dart';
+import '../../common_widget/round_button.dart';
 import '../../common_widget/round_textfield.dart';
+import 'new_password_view.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key});
@@ -13,8 +14,8 @@ class ResetPasswordView extends StatefulWidget {
 }
 
 class _ResetPasswordViewState extends State<ResetPasswordView> {
-  TextEditingController txtEmail = TextEditingController();
-  TextEditingController txtPassword = TextEditingController();
+  final _emailcontroller = TextEditingController();
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +52,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               ),
               RoundTextfield(
                 hinText: "Your Email",
-                controller: txtEmail,
+                controller: _emailcontroller,
                 keyboardtype: TextInputType.emailAddress,
               ),
               const SizedBox(
@@ -60,6 +61,15 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               RoundButton(
                   title: "Send",
                   onPressed: () {
+                    auth
+                        .sendPasswordResetEmail(
+                            email: _emailcontroller.text.toString())
+                        .then((value) {
+                      print(
+                          'We Have Sent You Email to Recover Password,Please Check Email');
+                    }).onError((error, stackTrace) {
+                      print("Enter Your Email Correctly");
+                    });
                     Navigator.push(
                       context,
                       MaterialPageRoute(
