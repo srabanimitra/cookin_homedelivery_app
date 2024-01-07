@@ -4,6 +4,7 @@ import 'package:cookinapp_01/common_widget/tab_button.dart';
 import 'package:flutter/material.dart';
 
 import '../home/home_view.dart';
+import '../menu/menu_view.dart';
 //import '../../common_widget/tab_button.dart';
 //import '../home/home_view.dart';
 
@@ -65,7 +66,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 0) {
                       selctTab = 0;
-                      selectPageView =  Container();
+                      selectPageView = const MenuView();
                     }
                     if (mounted) {
                       setState(() {});
@@ -95,7 +96,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 3) {
                       selctTab = 3;
-                      selectPageView =  Container();
+                      selectPageView = Container();
                     }
                     if (mounted) {
                       setState(() {});
