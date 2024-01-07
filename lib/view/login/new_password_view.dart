@@ -49,14 +49,14 @@ class _NewPasswordViewState extends State<NewPasswordView> {
                 height: 60,
               ),
               RoundTextfield(
-                hintText: "New Password",
+                hinText: "New Password",
                 controller: txtPassword,
               ),
               const SizedBox(
                 height: 60,
               ),
               RoundTextfield(
-                hintText: "Confirm Password",
+                hinText: "Confirm Password",
                 controller: txtConfirmPassword,
               ),
               const SizedBox(

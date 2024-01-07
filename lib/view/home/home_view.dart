@@ -174,7 +174,7 @@ class _HomeViewState extends State<HomeView> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RoundTextfield(
-                      hintText: 'Search Food',
+                      hinText: 'Search Food',
                       controller: txtSearch,
                       left: Container(
                         alignment: Alignment.center,
