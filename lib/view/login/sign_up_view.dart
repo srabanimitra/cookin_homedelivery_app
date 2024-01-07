@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../common_widget/round_button.dart';
 import '../on_boarding/on_boarding_view.dart';
 
 class SignUpView extends StatefulWidget {
@@ -25,11 +24,11 @@ class _SignUpViewState extends State<SignUpView> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Color.fromARGB(255, 235, 201, 82),
           title: Center(
             child: Text(
               message,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: Color.fromARGB(255, 240, 3, 3)),
             ),
           ),
         );

@@ -2,7 +2,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/color_extension.dart';
 import '../on_boarding/on_boarding_view.dart';
+import 'reset_password_view.dart';
 //import '../../common/color_extension.dart';
 //import '../../common_widget/round_button.dart';
 //import '../../common_widget/round_textfield.dart';
@@ -19,8 +21,8 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-  TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _passwordcontroller = TextEditingController();
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController();
   String _email = "";
   String _password = "";
   void _handleLogin() async {
@@ -41,11 +43,11 @@ class _LoginViewState extends State<LoginView> {
     //  var media = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text("Login"),
+          title: const Text("Login"),
         ),
         body: Center(
           child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Form(
                 key: _formkey,
                 child: Column(
@@ -54,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                     TextFormField(
                       controller: _emailcontroller,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: "Email",
                       ),
@@ -76,7 +78,7 @@ class _LoginViewState extends State<LoginView> {
                     TextFormField(
                       controller: _passwordcontroller,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: "Password",
                       ),
@@ -92,7 +94,7 @@ class _LoginViewState extends State<LoginView> {
                         });
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ElevatedButton(
@@ -107,7 +109,28 @@ class _LoginViewState extends State<LoginView> {
                           );
                         }
                       },
-                      child: Text("Log In"),
+                      child: const Text("Log In"),
+                    ),
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ResetPasswordView(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Forgot Your Password?",
+                        style: TextStyle(
+                          color: TColor.secondaryText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
                     ),
                   ],
                 ),
