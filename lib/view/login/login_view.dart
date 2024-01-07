@@ -62,7 +62,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Please Enter Your Email";
+                          return "Please Enter Your Email Here";
                         }
                         return null;
                       },
