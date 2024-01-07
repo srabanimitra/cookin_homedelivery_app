@@ -107,7 +107,7 @@ class _MenuViewState extends State<MenuView> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RoundTextfield(
-                      hinText: "Search Food",
+                      hintText: "Search Food",
                       controller: txtSearch,
                       left: Container(
                         alignment: Alignment.center,
