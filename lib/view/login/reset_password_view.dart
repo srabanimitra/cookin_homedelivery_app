@@ -51,7 +51,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 60,
               ),
               RoundTextfield(
-                hinText: "Your Email",
+                hintText: "Your Email",
                 controller: _emailcontroller,
                 keyboardtype: TextInputType.emailAddress,
               ),
@@ -70,12 +70,12 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                     }).onError((error, stackTrace) {
                       print("Enter Your Email Correctly");
                     });
-                    Navigator.push(
+                    /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const NewPasswordView(),
                       ),
-                    );
+                    );*/
                   }),
             ],
           ),
