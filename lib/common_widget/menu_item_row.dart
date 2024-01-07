@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../common/color_extension.dart';
 //import '../common/color_extention.dart/color_extension.dart';
-
 class MenuItemRow extends StatelessWidget {
   final Map mObj;
   final VoidCallback onTap;
