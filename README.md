@@ -1,6 +1,11 @@
 # cookinapp_01
 
-A new Flutter project.
+A Homemade Food Delivey app.
+Contributors:
+Srabani Mitra
+Nusrat Jahan Adiba
+Sumaiya Aftab Prova
+Nabiha Tahsin Khan
 
 ## Getting Started
 
