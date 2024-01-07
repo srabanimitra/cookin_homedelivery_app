@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
+
 import '../../common_widget/round_button.dart';
+
 class OtpView extends StatefulWidget {
   const OtpView({Key? key}) : super(key: key);
+
   @override
   State<OtpView> createState() => _OtpViewState();
 }
+
 class _OtpViewState extends State<OtpView> {
   final _otpPinFieldController = GlobalKey<OtpPinFieldState>();
-  bool isOtpConfirmed=false;
+  bool isOtpConfirmed = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class _OtpViewState extends State<OtpView> {
               const SizedBox(
                 height: 64,
               ),
-              Text(
+              const Text(
                 "We have sent an OTP to your mobile",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -32,7 +37,7 @@ class _OtpViewState extends State<OtpView> {
               const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "please check your mobile number 071******12\n to  reset your password",
                 style: TextStyle(
                   fontSize: 14,
@@ -45,7 +50,8 @@ class _OtpViewState extends State<OtpView> {
               SizedBox(
                 height: 60,
                 child: OtpPinField(
-                  key: _otpPinFieldController, onChange: (String text) {  }, onSubmit: (String text) {  },
+                  key: _otpPinFieldController, onChange: (String text) {},
+                  onSubmit: (String text) {},
                   // ... Your existing OTP field configuration ...
                 ),
               ),
@@ -67,7 +73,7 @@ class _OtpViewState extends State<OtpView> {
                       child: Text('Verify OTP'),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Flexible(
                     child: ElevatedButton(
                       onPressed: () {
@@ -83,8 +89,8 @@ class _OtpViewState extends State<OtpView> {
                   children: [
                     // Add your OTP confirmation UI here
                     // For example:
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
                       child: Text(
                         'OTP Confirmed!',
                         style: TextStyle(
@@ -108,7 +114,7 @@ class _OtpViewState extends State<OtpView> {
                 onPressed: () {
                   // Handle didn't receive OTP action
                 },
-                child: Row(
+                child: const Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
