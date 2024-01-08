@@ -1,6 +1,7 @@
 
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/common_widget/tab_button.dart';
+import 'package:cookinapp_01/view/offer/offer_view.dart';
 import 'package:flutter/material.dart';
 
 import '../home/home_view.dart';
@@ -79,7 +80,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 1) {
                       selctTab = 1;
-                      selectPageView =  Container();
+                      selectPageView =  OfferView();
                     }
                     if (mounted) {
                       setState(() {});

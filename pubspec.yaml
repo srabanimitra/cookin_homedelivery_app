@@ -85,6 +85,12 @@ flutter:
       #-img/menu_3.png:
       #-img/btn_next.png:
       #-img/menu_4.png:
+      #- img/favorites_btn_2.png
+      #- img/favorites_btn.png
+      #-img/shopping_add.png
+      #-img/offer_1.png
+      #-img/offer_2.png
+      #-img/offer_3.png
 
       #-img/dess_1.png:
       #-img/dess_2.png:
