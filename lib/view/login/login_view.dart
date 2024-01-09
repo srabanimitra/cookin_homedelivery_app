@@ -1,4 +1,5 @@
 //import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -131,6 +132,36 @@ class _LoginViewState extends State<LoginView> {
                           fontWeight: FontWeight.w800,
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpView(),
+                          ),
+                        );
+                      },
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        Text(
+                          "Don't have an Account?",
+                          style: TextStyle(
+                              color: TColor.secondaryText,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "SignUp",
+                          style: TextStyle(
+                            color: TColor.primary,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ]),
                     ),
                   ],
                 ),

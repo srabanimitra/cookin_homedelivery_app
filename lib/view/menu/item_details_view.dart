@@ -17,7 +17,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-    var color;
+    //  var color;
     //   var RatingBar;
     return Scaffold(
         backgroundColor: TColor.white,
