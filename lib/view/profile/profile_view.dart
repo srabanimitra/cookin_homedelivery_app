@@ -167,7 +167,7 @@ class _ProfileViewState extends State<ProfileView> {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 21),
                 child: RoundButton(title: "Save", onPressed: () {}),
               ),
               const SizedBox(
