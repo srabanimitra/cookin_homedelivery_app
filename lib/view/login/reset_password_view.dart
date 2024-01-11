@@ -53,7 +53,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               RoundTextfield(
                 hintText: "Your Email",
                 controller: _emailcontroller,
-                keyboardtype: TextInputType.emailAddress,
+                keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(
                 height: 30,
