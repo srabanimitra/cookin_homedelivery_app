@@ -9,13 +9,14 @@ class RoundButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final RoundButtonType type;
+  final double fontSize;
   //final double fontSize;
-  const RoundButton({
-    super.key,
-    required this.title,
-    required this.onPressed,
-    this.type = RoundButtonType.bgPrimary,
-  });
+  const RoundButton(
+      {super.key,
+        required this.title,
+        required this.onPressed,
+        this.fontSize= 16,
+        this.type = RoundButtonType.bgPrimary});
   //this.fontSize = 16,
   //this.type = RoundButtonType.bgPrimary});
 
@@ -33,7 +34,7 @@ class RoundButton extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-              color: TColor.white, fontSize: 16, fontWeight: FontWeight.w600),
+              color: TColor.white, fontSize: fontSize, fontWeight: FontWeight.w600),
         ),
       ),
     );
