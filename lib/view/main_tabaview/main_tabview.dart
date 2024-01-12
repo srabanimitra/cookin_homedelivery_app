@@ -1,6 +1,7 @@
 
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/common_widget/tab_button.dart';
+import 'package:cookinapp_01/view/more/more_view.dart';
 import 'package:cookinapp_01/view/offer/offer_view.dart';
 import 'package:cookinapp_01/view/profile/profile_view.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 1) {
                       selctTab = 1;
-                      selectPageView =  OfferView();
+                      selectPageView = const OfferView();
                     }
                     if (mounted) {
                       setState(() {});
@@ -111,7 +112,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 4) {
                       selctTab = 4;
-                      selectPageView =Container();
+                      selectPageView = const MoreView();
                     }
                     if (mounted) {
                       setState(() {});
