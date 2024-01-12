@@ -4,7 +4,8 @@ import 'package:otp_pin_field/otp_pin_field.dart';
 import '../../common_widget/round_button.dart';
 
 class OtpView extends StatefulWidget {
-  const OtpView({Key? key}) : super(key: key);
+  final String verificationId;
+  const OtpView({Key? key, required this.verificationId}) : super(key: key);
 
   @override
   State<OtpView> createState() => _OtpViewState();

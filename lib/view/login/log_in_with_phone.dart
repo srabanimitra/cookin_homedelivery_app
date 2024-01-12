@@ -48,8 +48,11 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
                       utils().toastMessage(e.toString());
                     },
                     codeSent: (String verificationId, int? token) {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => OtpView()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  OtpView(verificationId: verificationId)));
                     },
                     codeAutoRetrievalTimeout: (e) {
                       utils().toastMessage(e.toString());

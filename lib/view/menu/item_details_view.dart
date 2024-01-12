@@ -323,7 +323,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                   width:
                                                       10), // Adjust the space between "-" and "2"
                                               InkWell(
@@ -359,7 +359,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                             height: 20,
                                           ),
                                           Column(children: [
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 20,
                                             ),
                                             Padding(
