@@ -162,7 +162,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       });
                     }
                   },
-                  loading: true,
                 ),
               ),
             ],
