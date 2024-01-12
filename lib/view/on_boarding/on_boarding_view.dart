@@ -1,5 +1,3 @@
-
-
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +22,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     {
       "title": "Find Food You Love",
       "subtitle":
-      "Discover the best foods from over 1,000\nrestaurants and fast delivery to your\ndoorstep",
+          "Discover the best foods from over 1,000\nrestaurants and fast delivery to your\ndoorstep",
       "image": "assets/img/on_boarding_1.png",
     },
     {
@@ -35,13 +33,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     {
       "title": "Live Tracking",
       "subtitle":
-      "Real time tracking of your food on the app\nonce you placed the order",
+          "Real time tracking of your food on the app\nonce you placed the order",
       "image": "assets/img/on_boarding_3.png",
     },
   ];
   @override
   void initState() {
-
     super.initState();
 
     controller.addListener(() {
@@ -62,13 +59,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           PageView.builder(
             controller: controller,
             itemCount: pageArr.length,
-            itemBuilder: ((context, index)
-            {
+            itemBuilder: ((context, index) {
               var pObj = pageArr[index] as Map? ?? {};
               return Column(
-                mainAxisAlignment:MainAxisAlignment.center,
-                mainAxisSize:MainAxisSize.min,
-                children:[
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
                   Container(
                     width: media.width,
                     height: media.width,
@@ -79,7 +75,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  SizedBox(height: media.width * 0.2,),
+                  SizedBox(
+                    height: media.width * 0.2,
+                  ),
                   Text(
                     pObj["title"].toString(),
                     style: TextStyle(
@@ -87,7 +85,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         fontSize: 28,
                         fontWeight: FontWeight.w800),
                   ),
-                  SizedBox(height: media.width * 0.07,),
+                  SizedBox(
+                    height: media.width * 0.07,
+                  ),
                   Text(
                     pObj["subtitle"].toString(),
                     textAlign: TextAlign.center,
@@ -96,11 +96,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         fontSize: 13,
                         fontWeight: FontWeight.w500),
                   ),
-
                   SizedBox(
                     height: media.width * 0.3,
                   ),
-                ],);
+                ],
+              );
 
               // SizedBox(
               //   height: media.width * 0.05,
@@ -109,14 +109,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               // SizedBox(
               //   height: media.width * 0.3,
               // ),
-            }
-            ),
-          )
-          ,Column(
-
+            }),
+          ),
+          Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height:media.height*0.6,),
+              SizedBox(
+                height: media.height * 0.6,
+              ),
               Row(
                 //  crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -134,33 +134,35 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   );
                 }).toList(),
               ),
-              SizedBox(height:media.height*0.22,),
-
+              SizedBox(
+                height: media.height * 0.22,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: RoundButton(title: "Next", onPressed: () {
-                  if (selectPage >= 2) {
-                    // Home Screen
+                child: RoundButton(
+                  title: "Next",
+                  onPressed: () {
+                    if (selectPage >= 2) {
+                      // Home Screen
 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MainTabView(),
-                      ),
-                    );
-                  }
-                  else {
-                    //Next screen
-                    setState(() {
-                      selectPage = selectPage + 1;
-                      controller.animateToPage(selectPage,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.bounceInOut);
-                    });
-                  }
-                }),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainTabView(),
+                        ),
+                      );
+                    } else {
+                      //Next screen
+                      setState(() {
+                        selectPage = selectPage + 1;
+                        controller.animateToPage(selectPage,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.bounceInOut);
+                      });
+                    }
+                  },
+                ),
               ),
-
             ],
           )
         ],

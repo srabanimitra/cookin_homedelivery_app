@@ -1,15 +1,11 @@
-//import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+import 'package:cookinapp_01/view/login/login_google.dart';
+import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../../common/color_extension.dart';
+import '../../common_widget/round_icon_buton.dart';
 import '../on_boarding/on_boarding_view.dart';
 import 'reset_password_view.dart';
-//import '../../common/color_extension.dart';
-//import '../../common_widget/round_button.dart';
-//import '../../common_widget/round_textfield.dart';
-//import 'login_view.dart';
-//import 'otp_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -131,6 +127,84 @@ class _LoginViewState extends State<LoginView> {
                           fontWeight: FontWeight.w800,
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpView(),
+                          ),
+                        );
+                      },
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        Text(
+                          "Don't have an Account?",
+                          style: TextStyle(
+                              color: TColor.secondaryText,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "SignUp",
+                          style: TextStyle(
+                            color: TColor.primary,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      "or Login With",
+                      style: TextStyle(
+                        color: TColor.secondaryText,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    RoundIconButton(
+                      icon: "assets/img/facebook_logo.png",
+                      title: "Login With Facebook",
+                      color: const Color(0xff367FC0),
+                      onPressed: () {},
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    RoundIconButton(
+                      icon: "assets/img/google_logo.png",
+                      title: "Login with Google",
+                      color: const Color(0xffDD4B39),
+                      onPressed: () {
+                        //Navigator.push(
+                        //  context,
+                        // MaterialPageRoute(
+                        //    builder: (context) => )),
+                      },
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    RoundIconButton(
+                      icon: "assets/img/phone.jpg",
+                      title: "Login with Phone",
+                      color: const Color.fromARGB(255, 83, 11, 111),
+                      onPressed: () {
+                        //  Navigator.push(
+                        // context,
+                        // MaterialPageRoute(
+                        //  builder: (context) => LoginWithPhone()));
+                      },
                     ),
                   ],
                 ),
