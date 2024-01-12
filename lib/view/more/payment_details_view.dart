@@ -215,8 +215,8 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                     fontSize: 16,
                     onPressed: () {}
 
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCardView() ));
-                    ),
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCardView() ));
+                ),
               ),
               const SizedBox(
                 height: 15,
