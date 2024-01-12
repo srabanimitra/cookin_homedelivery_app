@@ -42,7 +42,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   @override
   void initState() {
-    
+
     super.initState();
 
     controller.addListener(() {
