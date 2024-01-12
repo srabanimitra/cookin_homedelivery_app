@@ -59,24 +59,25 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 30,
               ),
               RoundButton(
-                  title: "Send",
-                  onPressed: () {
-                    auth
-                        .sendPasswordResetEmail(
-                            email: _emailcontroller.text.toString())
-                        .then((value) {
-                      print(
-                          'We Have Sent You Email to Recover Password,Please Check Email');
-                    }).onError((error, stackTrace) {
-                      print("Enter Your Email Correctly");
-                    });
-                    /* Navigator.push(
+                title: "Send",
+                onPressed: () {
+                  auth
+                      .sendPasswordResetEmail(
+                          email: _emailcontroller.text.toString())
+                      .then((value) {
+                    print(
+                        'We Have Sent You Email to Recover Password,Please Check Email');
+                  }).onError((error, stackTrace) {
+                    print("Enter Your Email Correctly");
+                  });
+                  /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const NewPasswordView(),
                       ),
                     );*/
-                  }),
+                },
+              ),
             ],
           ),
         ),

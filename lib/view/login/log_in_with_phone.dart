@@ -33,6 +33,7 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
             ),
             TextFormField(
               controller: PhoneNumberController,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(hintText: '+019283983'),
             ),
             const SizedBox(
@@ -41,10 +42,16 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
             RoundButton(
               title: 'Login',
               onPressed: () {
+                setState(() {
+                  loading = true;
+                });
                 auth.verifyPhoneNumber(
                     phoneNumber: PhoneNumberController.text,
                     verificationCompleted: (_) {},
                     verificationFailed: (e) {
+                      setState(() {
+                        loading = false;
+                      });
                       utils().toastMessage(e.toString());
                     },
                     codeSent: (String verificationId, int? token) {
@@ -53,8 +60,14 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
                           MaterialPageRoute(
                               builder: (context) =>
                                   OtpView(verificationId: verificationId)));
+                      setState(() {
+                        loading = false;
+                      });
                     },
                     codeAutoRetrievalTimeout: (e) {
+                      setState(() {
+                        loading = false;
+                      });
                       utils().toastMessage(e.toString());
                     });
               },
