@@ -1,19 +1,11 @@
-//import 'package:cookinapp_01/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
-import 'package:cookinapp_01/view/login/log_in_with_phone.dart';
+import 'package:cookinapp_01/view/login/login_google.dart';
 import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import '../../common/color_extension.dart';
 import '../../common_widget/round_icon_buton.dart';
 import '../on_boarding/on_boarding_view.dart';
 import 'reset_password_view.dart';
-//import '../../common/color_extension.dart';
-//import '../../common_widget/round_button.dart';
-//import '../../common_widget/round_textfield.dart';
-//import 'login_view.dart';
-//import 'otp_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -193,7 +185,12 @@ class _LoginViewState extends State<LoginView> {
                       icon: "assets/img/google_logo.png",
                       title: "Login with Google",
                       color: const Color(0xffDD4B39),
-                      onPressed: () {},
+                      onPressed: () {
+                        //Navigator.push(
+                        //  context,
+                        // MaterialPageRoute(
+                        //    builder: (context) => )),
+                      },
                     ),
                     const SizedBox(
                       height: 25,
@@ -201,12 +198,12 @@ class _LoginViewState extends State<LoginView> {
                     RoundIconButton(
                       icon: "assets/img/phone.jpg",
                       title: "Login with Phone",
-                      color: Color.fromARGB(255, 83, 11, 111),
+                      color: const Color.fromARGB(255, 83, 11, 111),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginWithPhone()));
+                        //  Navigator.push(
+                        // context,
+                        // MaterialPageRoute(
+                        //  builder: (context) => LoginWithPhone()));
                       },
                     ),
                   ],
