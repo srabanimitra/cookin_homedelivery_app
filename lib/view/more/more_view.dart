@@ -1,4 +1,5 @@
 import 'package:cookinapp_01/common/color_extension.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:cookinapp_01/view/more/payment_details_view.dart';
 import 'package:flutter/material.dart';
 
@@ -106,6 +107,14 @@ class _MoreViewState extends State<MoreView> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                     const PaymentDetailsView()));
+
+                            break;
+                          case "2":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const MyOrderView()));
 
                             break;
 
