@@ -45,7 +45,6 @@ class _NotificationsViewState extends State<NotificationsView> {
       "time": "12 Jan 2024",
     },
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

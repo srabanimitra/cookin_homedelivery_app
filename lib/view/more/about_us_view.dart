@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
 
-
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
 
@@ -12,9 +11,9 @@ class AboutUsView extends StatefulWidget {
 
 class _AboutUsViewState extends State<AboutUsView> {
   List aboutTextArr = ["Are you craving the warmth and authenticity of homemade meals?Look no fur-ther!",
-  "We are thrilled to introduce, your go-to destination for delicious, homemade food delivered straight to your doorstep.",
-  "At CookIn,we believe in the power of homemade goodness. Our platform con-nects talented home chefs with food enthusiasts like you, offering a diverse array of culinary delights made with love and care.",
-  "Whether you’re a busy professional, a student missing the taste of home, or simply someone who appreciates the unique flavors of homemade cuisine, our app is designed with you in mind.",
+    "We are thrilled to introduce, your go-to destination for delicious, homemade food delivered straight to your doorstep.",
+    "At CookIn,we believe in the power of homemade goodness. Our platform con-nects talented home chefs with food enthusiasts like you, offering a diverse array of culinary delights made with love and care.",
+    "Whether you’re a busy professional, a student missing the taste of home, or simply someone who appreciates the unique flavors of homemade cuisine, our app is designed with you in mind.",
 
   ];
 

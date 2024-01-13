@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
 
-
 class InboxView extends StatefulWidget {
   const InboxView({super.key});
 
@@ -42,7 +41,7 @@ class _InboxViewState extends State<InboxView> {
       "detail":
       "delivered food at Shidheswari Road",
     },
-      {
+    {
       "title": "Thank you for ordering from Cook-IN",
 
       "detail":

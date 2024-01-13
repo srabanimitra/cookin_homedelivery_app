@@ -5,7 +5,6 @@ import '../../common_widget/round_icon_buton.dart';
 import '../../common_widget/round_textfield.dart';
 
 
-
 class AddCardView extends StatefulWidget {
   const AddCardView({super.key});
 
@@ -25,7 +24,7 @@ class _AddCardViewState extends State<AddCardView> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Container
-    (
+      (
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
       width: media.width,
 

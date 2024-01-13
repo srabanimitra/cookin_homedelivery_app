@@ -112,7 +112,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 4) {
                       selctTab = 4;
-                      selectPageView =const MoreView();
+                      selectPageView = const MoreView();
                     }
                     if (mounted) {
                       setState(() {});

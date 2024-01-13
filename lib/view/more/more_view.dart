@@ -1,14 +1,18 @@
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/view/more/payment_details_view.dart';
 import 'package:flutter/material.dart';
+
 import 'about_us_view.dart';
 import 'inbox_view.dart';
 import 'notification_view.dart';
+
 class MoreView extends StatefulWidget {
   const MoreView({super.key});
+
   @override
   State<MoreView> createState() => _MoreViewState();
 }
+
 class _MoreViewState extends State<MoreView> {
   List moreArr = [
     {
