@@ -1,6 +1,7 @@
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:cookinapp_01/common_widget/round_icon_buton.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:flutter/material.dart';
 
 class PaymentDetailsView extends StatefulWidget {
@@ -58,7 +59,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Container()));
+                                builder: (context) => const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",

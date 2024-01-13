@@ -6,6 +6,7 @@ import 'package:cookinapp_01/common_widget/popular_resutaurant_row.dart';
 import 'package:cookinapp_01/common_widget/recent_item_row.dart';
 import 'package:cookinapp_01/common_widget/round_textfield.dart';
 import 'package:cookinapp_01/common_widget/view_all_title_row.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -118,7 +119,14 @@ class _HomeViewState extends State<HomeView> {
                         fontWeight: FontWeight.w800),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
+
+                    },
                     icon: Image.asset(
                       "assets/img/shopping_cart.png",
                       width: 25,
