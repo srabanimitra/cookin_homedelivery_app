@@ -1,9 +1,11 @@
-import 'package:cookinapp_01/view/login/login_google.dart';
+import 'package:cookinapp_01/authservice/auth_service.dart';
+import 'package:cookinapp_01/common_widget/square_tile.dart';
+//import 'package:cookinapp_01/view/login/login_google.dart';
 import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../common/color_extension.dart';
-import '../../common_widget/round_icon_buton.dart';
+//import '../../common_widget/round_icon_buton.dart';
 import '../on_boarding/on_boarding_view.dart';
 import 'reset_password_view.dart';
 
@@ -41,174 +43,190 @@ class _LoginViewState extends State<LoginView> {
         appBar: AppBar(
           title: const Text("Login"),
         ),
-        body: Center(
-          child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Form(
-                key: _formkey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                      controller: _emailcontroller,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: "Email",
+        body: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Form(
+                  key: _formkey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 20,
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "Please Enter Your Email";
-                        }
-                        return null;
-                      },
-                      onChanged: (value) {
-                        setState(() {
-                          _email = value;
-                        });
-                      },
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextFormField(
-                      controller: _passwordcontroller,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: "Password",
+                      const Icon(
+                        Icons.lock,
+                        size: 100,
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "Please Enter Your password";
-                        }
-                        return null;
-                      },
-                      onChanged: (value) {
-                        setState(() {
-                          _password = value;
-                        });
-                      },
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        if (_formkey.currentState!.validate()) {
-                          _handleLogin();
+                      Text(
+                        'Welcome back,you have been missed!',
+                        style: TextStyle(
+                          color: Colors.grey[700],
+                          fontSize: 16,
+                        ),
+                      ),
+                      TextFormField(
+                        controller: _emailcontroller,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "Email",
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please Enter Your Email";
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          setState(() {
+                            _email = value;
+                          });
+                        },
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextFormField(
+                        controller: _passwordcontroller,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "Password",
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please Enter Your password";
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          setState(() {
+                            _password = value;
+                          });
+                        },
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          if (_formkey.currentState!.validate()) {
+                            _handleLogin();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const OnBoardingView(),
+                              ),
+                            );
+                          }
+                        },
+                        child: const Text("Log In"),
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      TextButton(
+                        onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const OnBoardingView(),
+                              builder: (context) => const ResetPasswordView(),
                             ),
                           );
-                        }
-                      },
-                      child: const Text("Log In"),
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ResetPasswordView(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "Forgot Your Password?",
-                        style: TextStyle(
-                          color: TColor.secondaryText,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SignUpView(),
-                          ),
-                        );
-                      },
-                      child: Row(mainAxisSize: MainAxisSize.min, children: [
-                        Text(
-                          "Don't have an Account?",
+                        },
+                        child: Text(
+                          "Forgot Password?",
                           style: TextStyle(
-                              color: TColor.secondaryText,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          "SignUp",
-                          style: TextStyle(
-                            color: TColor.primary,
+                            color: TColor.secondaryText,
                             fontSize: 14,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
-                      ]),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      "or Login With",
-                      style: TextStyle(
-                        color: TColor.secondaryText,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w800,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    RoundIconButton(
-                      icon: "assets/img/facebook_logo.png",
-                      title: "Login With Facebook",
-                      color: const Color(0xff367FC0),
-                      onPressed: () {},
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    RoundIconButton(
-                      icon: "assets/img/google_logo.png",
-                      title: "Login with Google",
-                      color: const Color(0xffDD4B39),
-                      onPressed: () {
-                        //Navigator.push(
-                        //  context,
-                        // MaterialPageRoute(
-                        //    builder: (context) => )),
-                      },
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    RoundIconButton(
-                      icon: "assets/img/phone.jpg",
-                      title: "Login with Phone",
-                      color: const Color.fromARGB(255, 83, 11, 111),
-                      onPressed: () {
-                        //  Navigator.push(
-                        // context,
-                        // MaterialPageRoute(
-                        //  builder: (context) => LoginWithPhone()));
-                      },
-                    ),
-                  ],
-                ),
-              )),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                thickness: 0.5,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text(
+                                "or continue With",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                thickness: 0.5,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SquareTile(
+                            imagepath: 'assets/img/google.png',
+                            onTap: () => AuthService().signInWithGoogle(),
+                          ),
+                          SizedBox(
+                            width: 25,
+                          ),
+                          SquareTile(
+                            imagepath: 'assets/img/facebook.png',
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignUpView(),
+                            ),
+                          );
+                        },
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          Text(
+                            "Don't have an Account?",
+                            style: TextStyle(
+                                color: TColor.secondaryText,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            "SignUp",
+                            style: TextStyle(
+                              color: TColor.primary,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ]),
+                      ),
+                    ],
+                  ),
+                )),
+          ),
         ));
   }
 }
