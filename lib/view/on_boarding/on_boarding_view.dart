@@ -39,6 +39,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       "image": "assets/img/on_boarding_3.png",
     },
   ];
+
   @override
   void initState() {
 
@@ -165,6 +166,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           )
         ],
       ),
+
     );
   }
 }
