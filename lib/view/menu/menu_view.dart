@@ -1,19 +1,8 @@
-//import 'package:cookin/view/menu/menu_items_view.dart';
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:flutter/material.dart';
 
-
-import '../../common/color_extention.dart/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
 import 'menu_items_view.dart';
-
-
-import 'package:flutter/material.dart';
-
-
-import '../../common/color_extention.dart/color_extension.dart';
-import '../../common_widget/round_textfield.dart';
-
 
 class MenuView extends StatefulWidget {
   const MenuView({super.key});
@@ -180,7 +169,7 @@ class _MenuViewState extends State<MenuView> {
                                   Expanded(
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           mObj["name"].toString(),
@@ -207,7 +196,7 @@ class _MenuViewState extends State<MenuView> {
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius:
-                                        BorderRadius.circular(17.5),
+                                            BorderRadius.circular(17.5),
                                         boxShadow: const [
                                           BoxShadow(
                                               color: Colors.black12,
