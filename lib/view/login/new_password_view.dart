@@ -62,7 +62,10 @@ class _NewPasswordViewState extends State<NewPasswordView> {
               const SizedBox(
                 height: 30,
               ),
-              RoundButton(title: "Next", onPressed: () {}),
+              RoundButton(
+                title: "Next",
+                onPressed: () {},
+              ),
             ],
           ),
         ),

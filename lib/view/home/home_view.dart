@@ -111,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Good morning Akila!",
+                    "Good morning!",
                     style: TextStyle(
                         color: TColor.primaryText,
                         fontSize: 20,
