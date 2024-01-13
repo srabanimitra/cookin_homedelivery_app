@@ -128,7 +128,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                                 "Burger",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    color: TColor.secondaryText, fontSize: 12),
+                                    color: TColor.secondaryText, fontSize: 13),
                               ),
                               Text(
                                 " . ",
