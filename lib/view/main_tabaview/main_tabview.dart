@@ -1,15 +1,11 @@
-
 import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/common_widget/tab_button.dart';
 import 'package:cookinapp_01/view/more/more_view.dart';
 import 'package:cookinapp_01/view/offer/offer_view.dart';
 import 'package:cookinapp_01/view/profile/profile_view.dart';
 import 'package:flutter/material.dart';
-
 import '../home/home_view.dart';
 import '../menu/menu_view.dart';
-//import '../../common_widget/tab_button.dart';
-//import '../home/home_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -29,26 +25,29 @@ class _MainTabViewState extends State<MainTabView> {
       body: PageStorage(bucket: storageBucket, child: selectPageView),
       backgroundColor: const Color(0xfff5f5f5),
       floatingActionButtonLocation:
-      FloatingActionButtonLocation.miniCenterDocked,
+          FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: SizedBox(
         width: 60,
         height: 60,
-        child: FloatingActionButton(
-          onPressed: () {
-            if (selctTab != 2) {
-              selctTab = 2;
-              selectPageView = const HomeView();
-            }
-            if (mounted) {
-              setState(() {});
-            }
-          },
-          shape: const CircleBorder(),
-          backgroundColor: selctTab == 2 ? TColor.primary : TColor.placeholder,
-          child: Image.asset(
-            "assets/img/tab_home.png",
-            width: 30,
-            height: 30,
+        child: SingleChildScrollView(
+          child: FloatingActionButton(
+            onPressed: () {
+              if (selctTab != 2) {
+                selctTab = 2;
+                selectPageView = const HomeView();
+              }
+              if (mounted) {
+                setState(() {});
+              }
+            },
+            shape: const CircleBorder(),
+            backgroundColor:
+                selctTab == 2 ? TColor.primary : TColor.placeholder,
+            child: Image.asset(
+              "assets/img/tab_home.png",
+              width: 30,
+              height: 30,
+            ),
           ),
         ),
       ),
@@ -91,6 +90,7 @@ class _MainTabViewState extends State<MainTabView> {
                   isSelected: selctTab == 1),
 
 
+
               const  SizedBox(width: 40, height: 40, ),
 
               TabButton(
@@ -99,7 +99,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 3) {
                       selctTab = 3;
-                      selectPageView = const ProfileView();
+                      selectPageView =  const ProfileView();
                     }
                     if (mounted) {
                       setState(() {});
@@ -112,7 +112,7 @@ class _MainTabViewState extends State<MainTabView> {
                   onTap: () {
                     if (selctTab != 4) {
                       selctTab = 4;
-                      selectPageView = const MoreView();
+                      selectPageView =const MoreView();
                     }
                     if (mounted) {
                       setState(() {});

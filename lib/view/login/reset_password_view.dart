@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../common/color_extension.dart';
 import '../../common_widget/round_button.dart';
 import '../../common_widget/round_textfield.dart';
-import 'new_password_view.dart';
+//import 'new_password_view.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key});
@@ -59,24 +59,25 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 30,
               ),
               RoundButton(
-                  title: "Send",
-                  onPressed: () {
-                    auth
-                        .sendPasswordResetEmail(
-                            email: _emailcontroller.text.toString())
-                        .then((value) {
-                      print(
-                          'We Have Sent You Email to Recover Password,Please Check Email');
-                    }).onError((error, stackTrace) {
-                      print("Enter Your Email Correctly");
-                    });
-                    /* Navigator.push(
+                title: "Send",
+                onPressed: () {
+                  auth
+                      .sendPasswordResetEmail(
+                          email: _emailcontroller.text.toString())
+                      .then((value) {
+                    print(
+                        'We Have Sent You Email to Recover Password,Please Check Email');
+                  }).onError((error, stackTrace) {
+                    print("Enter Your Email Correctly");
+                  });
+                  /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const NewPasswordView(),
                       ),
                     );*/
-                  }),
+                },
+              ),
             ],
           ),
         ),

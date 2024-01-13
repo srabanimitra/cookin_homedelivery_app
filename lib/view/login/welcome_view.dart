@@ -3,6 +3,7 @@ import '../../common/color_extension.dart';
 import '../../common_widget/round_button.dart';
 import 'login_view.dart';
 import 'sign_up_view.dart';
+
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
   @override
@@ -47,12 +48,12 @@ class _WelcomeViewState extends State<WelcomeView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
-              title:"Login",
+              title: "Login",
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context)=>const LoginView(),
+                    builder: (context) => const LoginView(),
                   ),
                 );
               },
@@ -64,10 +65,7 @@ class _WelcomeViewState extends State<WelcomeView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
-
               title: "SignUp",
-
-
               type: RoundButtonType.textPrimary,
               onPressed: () {
                 Navigator.push(

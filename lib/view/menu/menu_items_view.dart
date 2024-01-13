@@ -1,10 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
-import '../../common/color_extention.dart/color_extension.dart';
 
-//import '../../common_widget/menu_item_row.dart';
 import '../../common_widget/menu_item_row.dart';
 import '../../common_widget/round_textfield.dart';
 import 'item_details_view.dart';
@@ -185,6 +182,3 @@ class _MenuItemsViewState extends State<MenuItemsView> {
     );
   }
 }
-
-
-
