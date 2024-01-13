@@ -69,10 +69,10 @@ class _SignUpViewState extends State<SignUpView> {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(223, 215, 71, 9),
+          backgroundColor: const Color.fromARGB(223, 239, 175, 122),
           title: const Text("Sign Up"),
         ),
-        backgroundColor: const Color.fromARGB(255, 235, 201, 82),
+        backgroundColor: const Color.fromARGB(255, 244, 229, 177),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(16),

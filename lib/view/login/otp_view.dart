@@ -1,7 +1,9 @@
-/*import 'package:flutter/material.dart';
-
+import 'package:cookinapp_01/view/on_boarding/on_boarding_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
 import '../../common_widget/round_button.dart';
+import '../../utils/utils.dart';
 
 class OtpView extends StatefulWidget {
   final String verificationId;
@@ -14,24 +16,24 @@ class OtpView extends StatefulWidget {
 class _OtpViewState extends State<OtpView> {
   bool loading = false;
 
-  final PhoneNumberController = TextEditingController();
+  final VerificationCodeController = TextEditingController();
   final auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Verify'),
+        title: const Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           children: [
             const SizedBox(
-              height: 50,
+              height: 25,
             ),
             TextFormField(
-              controller: PhoneNumberController,
+              controller: VerificationCodeController,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(hintText: '6 digit code'),
             ),
@@ -39,16 +41,24 @@ class _OtpViewState extends State<OtpView> {
               height: 80,
             ),
             RoundButton(
-              title: 'Verify',
-              onPressed: () {
-                final Credential = PhoneAuthProvider.credential(
-                    verificationId: 'verificationId', smsCode: 'smsCode');
-              },
-            ),
+                title: 'Verify',
+                onPressed: () async {
+                  final Credential = PhoneAuthProvider.credential(
+                      verificationId: widget.verificationId,
+                      smsCode: VerificationCodeController.text.toString());
+                  try {
+                    await auth.signInWithCredential(Credential);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OnBoardingView()));
+                  } catch (e) {
+                    utils().toastMessage(e.toString());
+                  }
+                })
           ],
         ),
       ),
     );
   }
 }
-*/
