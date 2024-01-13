@@ -3,9 +3,6 @@ import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
 
 import '../main_tabaview/main_tabview.dart';
-//import 'package:food_delivery/common/color_extension.dart';
-//import 'package:food_delivery/common_widget/round_button.dart';
-//import 'package:food_delivery/view/main_tabview/main_tabview.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -37,6 +34,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       "image": "assets/img/on_boarding_3.png",
     },
   ];
+
   @override
   void initState() {
     super.initState();
@@ -167,6 +165,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           )
         ],
       ),
+
     );
   }
 }
