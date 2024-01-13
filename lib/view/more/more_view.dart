@@ -2,6 +2,10 @@ import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:cookinapp_01/view/more/payment_details_view.dart';
 import 'package:flutter/material.dart';
 
+import 'about_us_view.dart';
+import 'inbox_view.dart';
+import 'notification_view.dart';
+
 class MoreView extends StatefulWidget {
   const MoreView({super.key});
 
@@ -104,6 +108,23 @@ class _MoreViewState extends State<MoreView> {
                                     const PaymentDetailsView()));
 
                             break;
+
+                          case "3":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        NotificationsView()));
+                          case "4":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>  InboxView()));
+                          case "5":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AboutUsView()));
                           default:
                         }
                       },
