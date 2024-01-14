@@ -34,13 +34,15 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
             TextFormField(
               controller: PhoneNumberController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(hintText: '+019 28 398  3'),
+              decoration:
+                  const InputDecoration(hintText: '+880 28 398  33 353'),
             ),
             const SizedBox(
               height: 80,
             ),
             RoundButton(
                 title: 'Login',
+                // loading:loading;
                 onPressed: () {
                   //          setState(() {
                   //          loading = true;

@@ -79,6 +79,9 @@ class _MoreViewState extends State<MoreView> {
                           fontWeight: FontWeight.w800),
                     ),
                     IconButton(
+
+                     
+
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -110,7 +113,7 @@ class _MoreViewState extends State<MoreView> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                    const PaymentDetailsView()));
+                                        const PaymentDetailsView()));
 
                             break;
                           case "2":
@@ -126,17 +129,17 @@ class _MoreViewState extends State<MoreView> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        NotificationsView()));
+                                        const NotificationsView()));
                           case "4":
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>  InboxView()));
+                                    builder: (context) => const InboxView()));
                           case "5":
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => AboutUsView()));
+                                    builder: (context) => const AboutUsView()));
                           default:
                         }
                       },
@@ -163,7 +166,7 @@ class _MoreViewState extends State<MoreView> {
                                     decoration: BoxDecoration(
                                         color: TColor.placeholder,
                                         borderRadius:
-                                        BorderRadius.circular(25)),
+                                            BorderRadius.circular(25)),
                                     alignment: Alignment.center,
                                     child: Image.asset(mObj["image"].toString(),
                                         width: 25,
@@ -191,7 +194,7 @@ class _MoreViewState extends State<MoreView> {
                                       decoration: BoxDecoration(
                                           color: Colors.red,
                                           borderRadius:
-                                          BorderRadius.circular(12.5)),
+                                              BorderRadius.circular(12.5)),
                                       alignment: Alignment.center,
                                       child: Text(
                                         countBase.toString(),
