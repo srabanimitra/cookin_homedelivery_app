@@ -266,6 +266,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
+
                           "Sub Total",
                           textAlign: TextAlign.center,
                           style: TextStyle(

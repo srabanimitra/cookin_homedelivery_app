@@ -10,7 +10,6 @@ class NotificationsView extends StatefulWidget {
   @override
   State<NotificationsView> createState() => _NotificationsViewState();
 }
-
 class _NotificationsViewState extends State<NotificationsView> {
   List notificationArr = [
     {

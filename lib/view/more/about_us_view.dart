@@ -58,7 +58,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const MyOrderView()));
+                                builder: (context) => const  MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
