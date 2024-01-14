@@ -63,7 +63,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                 const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Row(
                   children: [
-                    /*ClipRRect(
+                   ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
                           "assets/img/shop_logo.png",
@@ -71,7 +71,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                           height: 80,
                           fit: BoxFit.cover,
                         )
-                    ),*/
+                    ),
                     const SizedBox(
                       width: 8,
                     ),
@@ -151,7 +151,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              /*Image.asset(
+                              Image.asset(
                                 "assets/img/location-pin.png",
                                 width: 13,
                                 height: 13,
@@ -159,7 +159,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               ),
                               const SizedBox(
                                 width: 4,
-                              ),*/
+                              ),
                               Expanded(
                                 child: Text(
                                   "No 03, 4th Lane, Newyork",
