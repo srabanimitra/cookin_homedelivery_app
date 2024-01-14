@@ -260,7 +260,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       height: 1,
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
