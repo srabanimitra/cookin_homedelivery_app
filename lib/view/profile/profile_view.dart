@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cookinapp_01/common_widget/round_button.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter/material.dart';
@@ -49,7 +50,19 @@ class _ProfileViewState extends State<ProfileView> {
                           fontSize: 20,
                           fontWeight: FontWeight.w800),
                     ),
-
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
+                      },
+                      icon: Image.asset(
+                        "assets/img/shopping_cart.png",
+                        width: 25,
+                        height: 25,
+                      ),
+                    ),
                   ],
                 ),
               ),

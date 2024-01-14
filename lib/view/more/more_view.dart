@@ -1,4 +1,5 @@
 import 'package:cookinapp_01/common/color_extension.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:cookinapp_01/view/more/payment_details_view.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,15 @@ class _MoreViewState extends State<MoreView> {
                           fontWeight: FontWeight.w800),
                     ),
                     IconButton(
-                      onPressed: () {},
+
+                     
+
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
+                      },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
                         width: 25,
@@ -106,6 +115,13 @@ class _MoreViewState extends State<MoreView> {
                                     builder: (context) =>
                                         const PaymentDetailsView()));
 
+                            break;
+                          case "2":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const MyOrderView()));
                             break;
 
                           case "3":
