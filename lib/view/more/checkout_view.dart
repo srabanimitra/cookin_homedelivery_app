@@ -4,11 +4,16 @@ import 'package:flutter/material.dart';
 import '../../common/color_extension.dart';
 
 import '../../common_widget/round_button.dart';
+import 'change_address_view.dart';
+
+
 class CheckoutView extends StatefulWidget {
   const CheckoutView({super.key});
+
   @override
   State<CheckoutView> createState() => _CheckoutViewState();
 }
+
 class _CheckoutViewState extends State<CheckoutView> {
   List paymentArr = [
     {"name": "Cash on delivery", "icon": "assets/img/cash.png"},
@@ -17,6 +22,7 @@ class _CheckoutViewState extends State<CheckoutView> {
   ];
 
   int selectMethod = -1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +98,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                  Container()),
+                                  const ChangeAddressView()),
                             );
                           },
                           child: Text(
