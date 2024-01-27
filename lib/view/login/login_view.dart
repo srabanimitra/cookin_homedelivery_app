@@ -1,5 +1,6 @@
 import 'package:cookinapp_01/authservice/auth_service.dart';
 import 'package:cookinapp_01/common_widget/square_tile.dart';
+import 'package:cookinapp_01/view/login/log_in_with_phone.dart';
 //import 'package:cookinapp_01/view/login/login_google.dart';
 import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -184,12 +185,17 @@ class _LoginViewState extends State<LoginView> {
                             imagepath: 'assets/img/google.png',
                             onTap: () => AuthService().signInWithGoogle(),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 25,
                           ),
                           SquareTile(
-                            imagepath: 'assets/img/facebook.png',
-                            onTap: () {},
+                            imagepath: 'assets/img/phone.jpg',
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginWithPhone()));
+                            },
                           ),
                         ],
                       ),

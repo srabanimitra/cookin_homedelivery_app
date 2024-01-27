@@ -1,4 +1,5 @@
 //import 'package:cookin/view/common/color_extension.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -465,33 +466,35 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                               )),
                                           InkWell(
                                             onTap: () {
-                                              //Navigator.push(
-                                              // context,
-                                              //MaterialPageRoute(
-                                              //  builder: (context) =>
-                                              //const MyOrderView()));
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                      const MyOrderView()));
                                             },
-                                            child: Container(
-                                              width: 45,
-                                              height: 45,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                  BorderRadius.circular(
-                                                      22.5),
-                                                  boxShadow: const [
-                                                    BoxShadow(
-                                                        color: Colors.black12,
-                                                        blurRadius: 4,
-                                                        offset: Offset(0, 2))
-                                                  ]),
-                                              alignment: Alignment.center,
-                                              child: Image.asset(
-                                                  "assets/img/shopping_cart.png",
-                                                  width: 20,
-                                                  height: 20,
-                                                  color: TColor.primary),
-                                            ),
+
+                                              child: Container(
+                                                width: 45,
+                                                height: 45,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    borderRadius:
+                                                    BorderRadius.circular(
+                                                        22.5),
+                                                    boxShadow: const [
+                                                      BoxShadow(
+                                                          color: Colors.black12,
+                                                          blurRadius: 4,
+                                                          offset: Offset(0, 2))
+                                                    ]),
+                                                alignment: Alignment.center,
+                                                child: Image.asset(
+                                                    "assets/img/shopping_cart.png",
+                                                    width: 20,
+                                                    height: 20,
+                                                    color: TColor.primary),
+                                              ),
+
                                           ),
                                         ],
                                       ),
@@ -554,12 +557,10 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                       ),
                       IconButton(
                         onPressed: () {
-                          // Navigator.push(
-                          // context,
-
-
-                          // MaterialPageRoute(
-                          //  builder: (context) => const MyOrderView()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MyOrderView()));
                         },
                         icon: Image.asset(
                           "assets/img/shopping_cart.png",

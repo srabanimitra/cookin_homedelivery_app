@@ -1,4 +1,5 @@
 import 'package:cookinapp_01/common/color_extension.dart';
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:cookinapp_01/view/more/payment_details_view.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,14 @@ class _MoreViewState extends State<MoreView> {
                           fontWeight: FontWeight.w800),
                     ),
                     IconButton(
+
+                     
+
                       onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
@@ -105,8 +113,15 @@ class _MoreViewState extends State<MoreView> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                    const PaymentDetailsView()));
+                                        const PaymentDetailsView()));
 
+                            break;
+                          case "2":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const MyOrderView()));
                             break;
 
                           case "3":
@@ -114,17 +129,17 @@ class _MoreViewState extends State<MoreView> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        NotificationsView()));
+                                        const NotificationsView()));
                           case "4":
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>  InboxView()));
+                                    builder: (context) => const InboxView()));
                           case "5":
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => AboutUsView()));
+                                    builder: (context) => const AboutUsView()));
                           default:
                         }
                       },
@@ -151,7 +166,7 @@ class _MoreViewState extends State<MoreView> {
                                     decoration: BoxDecoration(
                                         color: TColor.placeholder,
                                         borderRadius:
-                                        BorderRadius.circular(25)),
+                                            BorderRadius.circular(25)),
                                     alignment: Alignment.center,
                                     child: Image.asset(mObj["image"].toString(),
                                         width: 25,
@@ -179,7 +194,7 @@ class _MoreViewState extends State<MoreView> {
                                       decoration: BoxDecoration(
                                           color: Colors.red,
                                           borderRadius:
-                                          BorderRadius.circular(12.5)),
+                                              BorderRadius.circular(12.5)),
                                       alignment: Alignment.center,
                                       child: Text(
                                         countBase.toString(),
