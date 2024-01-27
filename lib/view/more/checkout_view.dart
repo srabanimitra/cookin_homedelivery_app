@@ -82,7 +82,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       children: [
                         Expanded(
                           child: Text(
-                            "653 Nostrand Ave.\nBrooklyn, NY 11216",
+                            "Shaheenbag Central Jame Mosjid, Cantonment, Dhaka",
                             style: TextStyle(
                                 color: TColor.primaryText,
                                 fontSize: 15,

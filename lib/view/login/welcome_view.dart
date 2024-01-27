@@ -1,23 +1,18 @@
 
 import 'package:cookinapp_01/view/login/sign_up_view.dart';
 import 'package:flutter/material.dart';
-
 import '../../common/color_extension.dart';
 import '../../common_widget/round_button.dart';
 import 'login_view.dart';
-
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
-
   @override
   State<WelcomeView> createState() => _WelcomeViewState();
 }
-
 class _WelcomeViewState extends State<WelcomeView> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-
     return Scaffold(
       body: SingleChildScrollView( // Wrap the Column with SingleChildScrollView
         child: Column(
@@ -57,7 +52,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  LoginView(),
+                      builder: (context) =>  const LoginView(),
                     ),
                   );
                 }, loading: true,
@@ -75,7 +70,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignUpView(),
+                      builder: (context) => const SignUpView(),
                     ),
                   );
                 }, loading: true,
