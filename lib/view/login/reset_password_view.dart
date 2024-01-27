@@ -77,6 +77,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                       ),
                     );*/
                 },
+                loading: true,
               ),
             ],
           ),

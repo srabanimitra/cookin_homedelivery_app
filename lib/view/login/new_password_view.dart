@@ -65,6 +65,7 @@ class _NewPasswordViewState extends State<NewPasswordView> {
               RoundButton(
                 title: "Next",
                 onPressed: () {},
+                loading: true,
               ),
             ],
           ),

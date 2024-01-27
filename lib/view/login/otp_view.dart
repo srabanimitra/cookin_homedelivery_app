@@ -41,21 +41,23 @@ class _OtpViewState extends State<OtpView> {
               height: 80,
             ),
             RoundButton(
-                title: 'Verify',
-                onPressed: () async {
-                  final Credential = PhoneAuthProvider.credential(
-                      verificationId: widget.verificationId,
-                      smsCode: VerificationCodeController.text.toString());
-                  try {
-                    await auth.signInWithCredential(Credential);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OnBoardingView()));
-                  } catch (e) {
-                    utils().toastMessage(e.toString());
-                  }
-                })
+              title: 'Verify',
+              onPressed: () async {
+                final Credential = PhoneAuthProvider.credential(
+                    verificationId: widget.verificationId,
+                    smsCode: VerificationCodeController.text.toString());
+                try {
+                  await auth.signInWithCredential(Credential);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => OnBoardingView()));
+                } catch (e) {
+                  utils().toastMessage(e.toString());
+                }
+              },
+              loading: true,
+            )
           ],
         ),
       ),
