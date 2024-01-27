@@ -57,6 +57,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                   ),
                 );
               },
+              loading: true,
             ),
           ),
           SizedBox(
@@ -75,6 +76,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                   ),
                 );
               },
+              loading: true,
             ),
           ),
           /* SizedBox(
