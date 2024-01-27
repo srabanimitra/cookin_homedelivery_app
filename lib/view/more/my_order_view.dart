@@ -1,7 +1,12 @@
-import 'package:cookinapp_01/common_widget/round_button.dart';
+
+import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../../common/color_extension.dart';
+
+import '../../common_widget/round_button.dart';
+import 'checkout_view.dart';
+
+
 
 class MyOrderView extends StatefulWidget {
   const MyOrderView({super.key});
@@ -60,7 +65,7 @@ class _MyOrderViewState extends State<MyOrderView> {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Row(
                   children: [
                     ClipRRect(
@@ -70,7 +75,8 @@ class _MyOrderViewState extends State<MyOrderView> {
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
-                        )),
+                        )
+                    ),
                     const SizedBox(
                       width: 8,
                     ),
@@ -187,11 +193,11 @@ class _MyOrderViewState extends State<MyOrderView> {
                   padding: EdgeInsets.zero,
                   itemCount: itemArr.length,
                   separatorBuilder: ((context, index) => Divider(
-                        indent: 25,
-                        endIndent: 25,
-                        color: TColor.secondaryText.withOpacity(0.5),
-                        height: 1,
-                      )),
+                    indent: 25,
+                    endIndent: 25,
+                    color: TColor.secondaryText.withOpacity(0.5),
+                    height: 1,
+                  )),
                   itemBuilder: ((context, index) {
                     var cObj = itemArr[index] as Map? ?? {};
                     return Container(
@@ -265,6 +271,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
+
                           "Sub Total",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -338,10 +345,15 @@ class _MyOrderViewState extends State<MyOrderView> {
                       height: 25,
                     ),
                     RoundButton(
-                      title: "Checkout",
-                      onPressed: () {},
-                      loading: true,
-                    ),
+                        title: "Checkout",
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CheckoutView(),
+                            ),
+                          );
+                        }, loading: true,),
                     const SizedBox(
                       height: 20,
                     ),
