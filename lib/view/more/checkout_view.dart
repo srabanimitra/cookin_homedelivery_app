@@ -16,7 +16,6 @@ class _CheckoutViewState extends State<CheckoutView> {
     {"name": "test@gmail.com", "icon": "assets/img/paypal.png"},
   ];
 
-
   int selectMethod = -1;
   @override
   Widget build(BuildContext context) {
