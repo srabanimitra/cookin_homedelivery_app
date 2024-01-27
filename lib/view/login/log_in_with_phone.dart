@@ -42,23 +42,23 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
             ),
             RoundButton(
                 title: 'Login',
-                // loading:loading;
+                loading: loading,
                 onPressed: () {
-                  //          setState(() {
-                  //          loading = true;
-                  //      });
+                  setState(() {
+                    loading = true;
+                  });
 
                   auth.verifyPhoneNumber(
                       phoneNumber: PhoneNumberController.text,
                       verificationCompleted: (_) {
-                        //        setState(() {
-                        //        loading = false;
-                        //    });
+                        setState(() {
+                          loading = false;
+                        });
                       },
                       verificationFailed: (e) {
-                        //     setState(() {
-                        //     loading = false;
-                        // });
+                        setState(() {
+                          loading = false;
+                        });
 
                         utils().toastMessage(e.toString());
                       },

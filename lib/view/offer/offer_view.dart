@@ -97,9 +97,9 @@ class _OfferViewState extends State<OfferView> {
                     IconButton(
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const MyOrderView()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
@@ -133,9 +133,12 @@ class _OfferViewState extends State<OfferView> {
                 child: SizedBox(
                   width: 140,
                   height: 30,
-                  child: RoundButton(title: "check Offers",
-                       fontSize: 12,
-                       onPressed: () {}),
+                  child: RoundButton(
+                    title: "check Offers",
+                    fontSize: 12,
+                    onPressed: () {},
+                    loading: true,
+                  ),
                 ),
               ),
               const SizedBox(
