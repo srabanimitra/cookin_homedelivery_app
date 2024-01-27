@@ -7,6 +7,7 @@ import 'package:cookinapp_01/common_widget/recent_item_row.dart';
 import 'package:cookinapp_01/common_widget/round_textfield.dart';
 import 'package:cookinapp_01/common_widget/view_all_title_row.dart';
 import 'package:cookinapp_01/view/more/my_order_view.dart';
+import 'package:cookinapp_01/view/more/notification_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -17,6 +18,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  NotificationsView notificationsView = NotificationsView();
+  @override
+  void inState() {
+    super.initState();
+    notificationsView.requestNotificationPermission();
+  }
   TextEditingController txtSearch = TextEditingController();
   List catArr = [
     {"image": "assets/img/cat_offer.png", "name": "Offers"},

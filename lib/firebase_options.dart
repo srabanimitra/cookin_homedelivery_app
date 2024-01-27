@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '195404149002',
     projectId: 'flutter-firebase-8110c',
     authDomain: 'flutter-firebase-8110c.firebaseapp.com',
+    databaseURL: 'https://flutter-firebase-8110c-default-rtdb.firebaseio.com',
     storageBucket: 'flutter-firebase-8110c.appspot.com',
     measurementId: 'G-8KWCGCERD9',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:195404149002:android:5727e854c2b9bb70158af3',
     messagingSenderId: '195404149002',
     projectId: 'flutter-firebase-8110c',
+    databaseURL: 'https://flutter-firebase-8110c-default-rtdb.firebaseio.com',
     storageBucket: 'flutter-firebase-8110c.appspot.com',
   );
 
@@ -66,7 +68,10 @@ class DefaultFirebaseOptions {
     appId: '1:195404149002:ios:79f6a9413c288a43158af3',
     messagingSenderId: '195404149002',
     projectId: 'flutter-firebase-8110c',
+    databaseURL: 'https://flutter-firebase-8110c-default-rtdb.firebaseio.com',
     storageBucket: 'flutter-firebase-8110c.appspot.com',
+    androidClientId: '195404149002-8kf78sv6tej5pfagbsgdndg5qf4tdapg.apps.googleusercontent.com',
+    iosClientId: '195404149002-3lenom5kn0o7h0jlijkc32b9h5kcqb3h.apps.googleusercontent.com',
     iosBundleId: 'com.example.cookinapp01',
   );
 
@@ -75,7 +80,10 @@ class DefaultFirebaseOptions {
     appId: '1:195404149002:ios:d7401d8054b71c6c158af3',
     messagingSenderId: '195404149002',
     projectId: 'flutter-firebase-8110c',
+    databaseURL: 'https://flutter-firebase-8110c-default-rtdb.firebaseio.com',
     storageBucket: 'flutter-firebase-8110c.appspot.com',
+    androidClientId: '195404149002-8kf78sv6tej5pfagbsgdndg5qf4tdapg.apps.googleusercontent.com',
+    iosClientId: '195404149002-dprvajm8kakclojhfs2rqgsugsrkg97m.apps.googleusercontent.com',
     iosBundleId: 'com.example.cookinapp01.RunnerTests',
   );
 }
