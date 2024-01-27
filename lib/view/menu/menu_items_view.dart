@@ -5,6 +5,7 @@ import '../../common/color_extension.dart';
 
 import '../../common_widget/menu_item_row.dart';
 import '../../common_widget/round_textfield.dart';
+import '../more/upload_image.dart';
 import 'item_details_view.dart';
 
 class MenuItemsView extends StatefulWidget {
@@ -130,6 +131,18 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                         "assets/img/shopping_cart.png",
                         width: 25,
                         height: 25,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const UploadImage()));
+                      },
+                      icon: Icon(
+                        Icons.photo,
+                        size: 30,
                       ),
                     ),
                   ],

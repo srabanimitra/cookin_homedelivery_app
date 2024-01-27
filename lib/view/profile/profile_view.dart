@@ -2,12 +2,14 @@ import 'dart:io';
 
 import 'package:cookinapp_01/common_widget/round_button.dart';
 import 'package:cookinapp_01/view/more/my_order_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
+import '../login/sign_up_view.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -17,6 +19,9 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  final auth = FirebaseAuth.instance;
+
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final ImagePicker picker = ImagePicker();
   XFile? image;
 
@@ -111,7 +116,14 @@ class _ProfileViewState extends State<ProfileView> {
                 fontWeight: FontWeight.w700),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignUpView(),
+                ),
+              );
+            },
             child: Text(
               "Sign Out",
               style: TextStyle(
@@ -134,15 +146,6 @@ class _ProfileViewState extends State<ProfileView> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
             child: RoundTitleTextfield(
-              title: "Email",
-              hintText: "Enter Email",
-              keyboardType: TextInputType.emailAddress,
-              controller: txtEmail,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
               title: "Mobile No",
               hintText: "Enter Mobile No",
               controller: txtMobile,
@@ -153,24 +156,7 @@ class _ProfileViewState extends State<ProfileView> {
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
             child: RoundTitleTextfield(
               title: "Address",
-              hintText: "Enter Address",
-              controller: txtAddress,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Password",
-              hintText: "* * * * * *",
-              obscureText: true,
-              controller: txtPassword,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Confirm Password",
-              hintText: "* * * * * *",
+              hintText: "Current Address",
               obscureText: true,
               controller: txtConfirmPassword,
             ),
