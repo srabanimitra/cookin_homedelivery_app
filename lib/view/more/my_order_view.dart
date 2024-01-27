@@ -60,18 +60,17 @@ class _MyOrderViewState extends State<MyOrderView> {
               ),
               Padding(
                 padding:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Row(
                   children: [
-                   ClipRRect(
+                    ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
                           "assets/img/shop_logo.png",
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
-                        )
-                    ),
+                        )),
                     const SizedBox(
                       width: 8,
                     ),
@@ -188,11 +187,11 @@ class _MyOrderViewState extends State<MyOrderView> {
                   padding: EdgeInsets.zero,
                   itemCount: itemArr.length,
                   separatorBuilder: ((context, index) => Divider(
-                    indent: 25,
-                    endIndent: 25,
-                    color: TColor.secondaryText.withOpacity(0.5),
-                    height: 1,
-                  )),
+                        indent: 25,
+                        endIndent: 25,
+                        color: TColor.secondaryText.withOpacity(0.5),
+                        height: 1,
+                      )),
                   itemBuilder: ((context, index) {
                     var cObj = itemArr[index] as Map? ?? {};
                     return Container(
@@ -266,7 +265,6 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-
                           "Sub Total",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -340,10 +338,10 @@ class _MyOrderViewState extends State<MyOrderView> {
                       height: 25,
                     ),
                     RoundButton(
-                        title: "Checkout",
-                        onPressed: () {
-
-                        }),
+                      title: "Checkout",
+                      onPressed: () {},
+                      loading: true,
+                    ),
                     const SizedBox(
                       height: 20,
                     ),

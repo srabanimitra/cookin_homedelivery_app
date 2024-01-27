@@ -59,7 +59,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>const MyOrderView()));
+                                builder: (context) => const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
@@ -72,7 +72,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
               ),
               Padding(
                 padding:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Text(
                   "Customize your payment method",
                   style: TextStyle(
@@ -168,6 +168,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                                   fontSize: 12,
                                   onPressed: () {},
                                   type: RoundButtonType.textPrimary,
+                                  loading: true,
                                 ),
                               )
                             ],
@@ -216,8 +217,8 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                     fontSize: 16,
                     onPressed: () {}
 
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCardView() ));
-                ),
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCardView() ));
+                    ),
               ),
               const SizedBox(
                 height: 15,
