@@ -1,3 +1,4 @@
+import 'package:cookinapp_01/view/more/my_order_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
@@ -120,10 +121,10 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                     ),
                     IconButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => const MyOrderView()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
