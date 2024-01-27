@@ -1,7 +1,12 @@
-import 'package:cookinapp_01/common_widget/round_button.dart';
+
+import 'package:cookinapp_01/common/color_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../../common/color_extension.dart';
+
+import '../../common_widget/round_button.dart';
+import 'checkout_view.dart';
+
+
 
 class MyOrderView extends StatefulWidget {
   const MyOrderView({super.key});
@@ -63,7 +68,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                 const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Row(
                   children: [
-                   ClipRRect(
+                    ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
                           "assets/img/shop_logo.png",
@@ -342,8 +347,13 @@ class _MyOrderViewState extends State<MyOrderView> {
                     RoundButton(
                         title: "Checkout",
                         onPressed: () {
-
-                        }),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CheckoutView(),
+                            ),
+                          );
+                        }, loading: true,),
                     const SizedBox(
                       height: 20,
                     ),
