@@ -104,13 +104,13 @@ flutter:
 
       #-img/dess_1.png:
       #-img/dess_2.png:
-    #-img/dess_3.png:
-    #-img/dess_4.png:
-    #-img/btn_back.png:
-    #-img/detail_top.png:
-    #- img/shopping_cart.png:
-     #-img/paypal.png:
-      #-img/map_pin.png:
+      #-img/dess_3.png:
+      #-img/dess_4.png:
+      #-img/btn_back.png:
+      #-img/detail_top.png:
+      #- img/shopping_cart.png:
+      #-img/paypal.png:
+    #-img/map_pin.png:
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

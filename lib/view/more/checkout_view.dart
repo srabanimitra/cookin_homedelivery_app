@@ -1,11 +1,10 @@
+import 'package:cookinapp_01/view/more/checkout_message_view.dart';
 import 'package:flutter/material.dart';
-
 
 import '../../common/color_extension.dart';
 
 import '../../common_widget/round_button.dart';
 import 'change_address_view.dart';
-
 
 class CheckoutView extends StatefulWidget {
   const CheckoutView({super.key});
@@ -64,7 +63,7 @@ class _CheckoutViewState extends State<CheckoutView> {
               ),
               Padding(
                 padding:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -72,7 +71,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       "Delivery Address",
                       textAlign: TextAlign.center,
                       style:
-                      TextStyle(color: TColor.secondaryText, fontSize: 12),
+                          TextStyle(color: TColor.secondaryText, fontSize: 12),
                     ),
                     const SizedBox(
                       height: 8,
@@ -98,7 +97,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                  const ChangeAddressView()),
+                                      const ChangeAddressView()),
                             );
                           },
                           child: Text(
@@ -167,7 +166,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                                 borderRadius: BorderRadius.circular(5),
                                 border: Border.all(
                                     color:
-                                    TColor.secondaryText.withOpacity(0.2))),
+                                        TColor.secondaryText.withOpacity(0.2))),
                             child: Row(
                               children: [
                                 Image.asset(pObj["icon"].toString(),
@@ -327,11 +326,19 @@ class _CheckoutViewState extends State<CheckoutView> {
               ),
               Padding(
                 padding:
-                const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
                 child: RoundButton(
-                    title: "Send Order",
-                    onPressed: () {}, loading: true,
-
+                  title: "Send Order",
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Colors.transparent,
+                        isScrollControlled: true,
+                        builder: (context) {
+                          return const CheckoutMessageView();
+                        });
+                  },
+                  loading: true,
                 ),
               ),
             ],
