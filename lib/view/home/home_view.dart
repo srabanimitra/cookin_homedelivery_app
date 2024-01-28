@@ -22,7 +22,13 @@ class _HomeViewState extends State<HomeView> {
   @override
   void inState() {
     super.initState();
-    notificationsView.requestNotificationPermission();
+   //notificationsView.requestNotificationPermission();
+    notificationsView.FirebaseInit();
+    notificationsView.isTokenRefresh();
+    notificationsView.getDeviceToken().then((value) {
+      print('device token');
+      print(value);
+    });
   }
   TextEditingController txtSearch = TextEditingController();
   List catArr = [
